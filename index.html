@@ -1,1203 +1,727 @@
 <!DOCTYPE html>
-<html xmlns:tei="http://www.tei-c.org/ns/1.0">
-   <head>
+<html xmlns:tei="http://www.tei-c.org/ns/1.0"><head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="author" content="Boerner, Ingo / Fischer, Frank / Hechtl, Angelika / Trilcke, Peer">
-	  <meta name="description" lang="en" content="Digital Edition of Cäsar Flaischlen's 'Graphische Litteratur-Tafel' (1890)">
-	  <meta name="description" lang="de" content="Digitale Edition von Cäsar Flaischlens 'Graphischer Litteratur-Tafel' (1890)">
-	  <meta name="keywords" lang="en" content="Digital Edition, Cäsar Flaischlen, History of Literature, Visualisation">
-	  <meta name="keywords" lang="de" content="Digitale Edition, Cäsar Flaischlen, Literaturgeschichte, Visualisierung">
-      <link rel="icon" href="../../favicon.ico">
-      <title>Graphische Litteratur-Tafel (1890). A Digital Edition.</title>
-      <link href="css/bootstrap.min.css" rel="stylesheet">
-	  <link href='https://fonts.googleapis.com/css?family=Jacques+Francois' rel='stylesheet' type='text/css'>
-      <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-      <link href="navbar-fixed-top.css" rel="stylesheet">
-	   <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
-	  <script src="js/ie-emulation-modes-warning.js"></script><link href="css/style.css" rel="stylesheet">
-   </head>
+      <meta name="description" content="">
+      <link rel="icon" href="file:///C:/favicon.ico">
+      <title>Tidens Ström eller universal historisk Omrids Tidens Ström</title>
+           <link href="css/bootstrap.min.css" rel="stylesheet">
+                <link href='https://fonts.googleapis.com/css?family=Jacques+Francois' rel='stylesheet' type='text/css'>
+                     <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+                          <link href="navbar-fixed-top.css" rel="stylesheet">
+                               <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+                               <script src="js/ie-emulation-modes-warning.js"></script><link href="css/style.css" rel="stylesheet">
+</head>
    <body>
       <nav class="navbar navbar-default navbar-fixed-top">
          <div class="container">
-            <div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a id="nav-title" class="navbar-brand" href="#">Graphische Litteratur-Tafel</a></div>
+            <div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="http://d-nb.info/gnd/11864310X">Flaischlen-Demo</a></div>
             <div id="navbar" class="navbar-collapse collapse">
-               <ul class="nav navbar-nav navbar-right">
-                  <!-- <li><a role="button" data-toggle="modal" data-target="#info-modal" title="About"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a></li> -->
-				  <li><a role="button" data-toggle="modal" data-target="#map-index" title="Index"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span></a></li>
-				  <!--
-				  <li><a role="button"><span id="nav-button-tools" class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a></li>
-				  -->
-				  <!--
-				  <li><a role="button" data-toggle="collapse" data-target="#searchPanel"><span id="nav-button-search" class="glyphicon glyphicon-search" aria-hidden="true"></span></a></li>
-				  -->
+               <ul class="nav navbar-nav">
+                  <li class="active"><a href="http://d-nb.info/gnd/11864310X">Home</a></li>
+                  <li class="dropdown"><a href="http://d-nb.info/gnd/11864310X" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Autor <span class="caret"></span></a><ul class="dropdown-menu"></ul>
+                  </li>
+                  <li class="dropdown"><a href="http://d-nb.info/gnd/11864310X" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Jahr <span class="caret"></span></a><ul class="dropdown-menu"></ul>
+                  </li>
                </ul>
             </div>
-            <!-- search box -->
-            <div class="collapse" id="searchPanel">
-				<form id="searchForm">
-					<div class="input-group input-group-lg">
-					<input id="searchBox" type="search" class="form-control" placeholder="Search...">
-					<span class="input-group-btn"><button class="btn btn-default btn-lg" type="submit">Find</button></span>
-					</div>
-				</form>
-				<p><a role="button" data-toggle="modal" data-target="#map-index">Browse Index</a></p>
-			<div> <!-- Search-div-->
-  </div>
-         </div> <!-- end search -->
+         </div>
       </nav>
-
-	  <div class ="jumbotron" id="start">
-			<div class="container">
-				<div id="title-Part">
-					<h1 id="main-title" class="text-center">Graphische Litteratur-Tafel.</h1>
-					<h2 id="sub-title" class="text-center">Die Deutsche Litteratur und der Einfluß fremder Litteraturen auf ihren Verlauf (1890)</h2>
-					<div id="byline" class="text-center">Dr. Cäsar Flaischlen</div>
-				</div>
-				<div class="row">
-				<div class="col-md-3 col-md-offset-2">
-					<img id="start-image" class="thumbnail" src="img/Flaischlen-ed2-SUB-small.png">
-				</div>
-				<div class="col-md-4">
-					<h3>About the Project</h3>
-          <p>This is the prototype of a digital edition of Cäsar Flaischlen’s <em>Graphische Litteratur-Tafel</em>. The giant flowchart of German literature was published in 1890 and is an early approach to visualise the historical development of literature.</p>
-          <p>The chart was <a href="https://github.com/weltliteratur/litteratur-tafel/blob/gh-pages/data/Litteratur-Tafel.xml">transcribed in XML format</a> following the TEI Guidelines. The website merges the tripartite graphic table into a single stream. A list of all mentioned authors can be accessed via an <a data-toggle="modal" data-target="#map-index">index</a>. We also digitised <a data-toggle="modal" data-target="#introduction">Flaischlen's preface</a>.</p>
-          <p>A detailed introdcution to this project can be found on our blog <a href="http://weltliteratur.net/A-Giant-1890-Flowchart-of-Foreign-Influences-on-German-Literature/">weltliteratur.net</a>.</p>
-					<!-- <button type="button btn-md" class="btn btn-default"  data-toggle="modal" data-target="#info-modal">read more</button> -->
-				</div>
-				</div> <!-- container? -->
-				<div class="row text-center" id="can-scroll"><a href="#tafel-start"><span class="glyphicon glyphicon-chevron-down"></span></a></div>
-			</div>  <!-- jumbotron -->
-		</div>
-	  <div class="container">
-
-
- <!-- Modal Introduction -->
-<div class="modal fade" id="introduction" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Cäsar Flaischlen's Introduction to Graphische Litteratur-Tafel</h4>
-      </div>
-      <div class="modal-body">
-		<div class="row">
-			<div class="col-md-6 col-md-offset-3">
-
-   <h2>Erklärende Einleitung.</h2>
-   <p>
-
-      Die vorliegende Arbeit soll zunächst nur ein Versuch sein: wie der Titel besagt,
-      die Geschichte unsrer deutschen Litteratur und den Einfluß fremder
-      Litteraturen auf ihren Verlauf, vom Beginn einer schriftlichen Ueberlieferung an,
-      durch graphische Darstellung übersichtlich zu machen. Es <em>kann</em>
-      auch nur ein Versuch sein, denn ihre absolute Lösung in derartiger
-      Fassung wäre wissenschaftlich nur möglich in detailliertester Specialzeichnung,
-      und eine solche hinwiederum nur auf Grund endgültig abgeschlossener
-      Resultate umfassendster Quellenforschung. Diese aber steht hier trotz der
-      unvergleichlichen Ergebnisse, zu denen sie in dem kurzen
-      Zeitraum vielleicht der letzten 75 Jahre gekommen ist, doch noch vor
-      vielen Lücken, namentlich was die ältere Zeit anbelangt. Es konnte sich deshalb auch nicht darum handeln, der Stellung jedes einzelnen Dichters
-      gerecht zu werden, oder noch weniger den einzelnen Werken jedes Einzelnen, inwieweit sie diese oder jene fremde Einwirkung aufweisen.
-      Dergleichen graphisch zu fassen in einer Darstellung der Litteratur von ihrem Anfange
-      an, wäre ein ebensolch Ding der Unmöglichkeit, als von einem Zeichner, der eine
-      Straßenperspektive gibt, zu verlangen, er habe auch die innere Architektonik der einzelnen Häuser sichtbar zu machen.
-   </p>
-   <p>
-      Beim Blick auf ein Ganzes, besonders auf eine ganze Entwickelung verschwindet
-      das Zustandekommen des Einzelnen. Dieses selbst aber ergibt durch
-      vorwaltende Aehnlichkeit oder Verschiedenheit in einer Vielheit von
-      Erscheinungen die Grundstimmung des Gesamtbildes. Man wird den Stil
-      eines Platzes zweifellos allgemein mit Renaissance bezeichnen, auch wenn selbst
-      zwei Fünftel der Gebäude eklektischer Bauart sind. Die Ausnahme, das
-      Verschiedene tritt zurück, wodurch sich eine feste, so oder so getönte Anschauung
-      gestaltet. So kam auch für die nachfolgende Darstellung nur ein der jeweiligen
-      Gegenwart gewissermaßen entfernter und mehr Jahrzehnte überblickender Standpunkt in
-      Betracht. Aus ähnlichen Gründen mußte die Mündung eines
-      Zuflusses da geschehen, wo sich etwa die betreffende fremde Einwirkung in unsrer
-      Litteratur äußert. Daß hierbei nicht mit Monaten gerechnet werden
-      konnte, daß oft Jahre, ja Jahr zehnte streitig waren, braucht kaum bemerkt
-      zu werden. Es lag mir namentlich daran, den Charakter der
-      verschiedenen <em>Perioden</em> hervortreten zu lassen, die größeren Strömungen
-      zu skizzieren, wie sie auftauchen, sich verlaufen oder verdrängt werden. Mathematisch ist dergleichen freilich nicht zu fixieren; denn geistige
-      Bewegungen lassen sich nicht in absolute Zahlen grenzen, es sind Prozesse, keine
-      Produkte, und in fortwährender Umbildung begriffen. So konnte sich
-      auch eine Zeichnung derselben häufig nur an eine mehr oder minder glücklich getroffene Schätzung halten; wird ja doch selbst die strengste
-      Karte von Meeresströmungen z. B. nie absolut nach einzelnen Wellen zu rechnen im
-      stande sein, so wenig als sich eine Isothermen- oder Isonephentabelle nach
-      einzelnen Luftteilchen oder Feldsteinen abzirkeln läßt.
-   </p>
-   <p>
-      Die Tafel soll vor allem zu einem Ueberblick über das Große und Ganze dienen, zu
-      einer Veranschaulichung des Gesamtverlaufs unserer Dichtung und
-      möchte besonders darüber orientieren, wo die einzelnen Epochen ihre Ideale suchten,
-      woher ihre Befruchtung kam, ob sie sich mit ihrem Geschmacke der
-      Litteratur eines andern Volkes zuneigten, oder aber ob sie sich von einer
-      Nachahmung fremder Art und Weise frei zu machen trachteten. Die
-      Intensität solch jeweiligen Einflusses und sein Verrinnen ist durch zu-
-      und abnehmende Dichtigkeit der Striche dargethan; wo mehrere
-      Geschmacksrichtungen sich geltend machten, erhellt ein Blick auf die Tafel von
-      selbst. Im siebzehnten Jahrhundert z. B. kreuzen sich die verschiedensten Einwirkungen in wirrem Durcheinander und gönnen einer
-      unbeeinflußten Produktion so gut wie keinen Raum, bis nach und nach alle
-      Trübungen sich wieder verarbeiten, versickern, und der Strom sich zu Ausgang des
-      achtzehnten Jahrhunderts zu ruhiger Klarheit und Reinheit durchwindet.
-   </p>
-   <p>
-      Auch unsere deutsche Dichtung aber ist wieder nur ein Teil der Weltlitteratur.
-      Wirklich vollständig wäre diese Arbeit daher erst, wenn sich ihr
-      links und rechts eine ähnliche Darstellung wenigstens der französischen und
-      englischen anschlösse, so daß sich ein Gesamtblick ermöglichte über
-      die Wechselwirkungen des ganzen poetischen Lebens dieser drei kulturell bedeutsamsten
-      Völker des modernen Abendlandes, der für eine Darstellung der
-      Weltlitteratur nicht allein von größtem Interesse, sondern auch von grundlegender
-      Wichtigkeit wäre. So trefflich und dankenswert alle Werke, welche
-      eine Geschichte der Weltlitteratur geben, und so anerkennenswert das Bestreben ihrer
-      Autoren, einen Zusammenhang festzustellen, so fehlt dabei doch immer der große
-      alles unter sich einende Horizont eines allgemeinen, wenn auch verschieden
-      beleuchteten Firmaments. In all diesen Werken sind die einzelnen Litteraturen
-      fast immer einzeln behandelt, abgesehen von meist nur als Nebensache bemerkten
-      Beziehungen, und nicht als das, was sie sind, als Teile, Bruchstücke einer ganzen,
-      obwohl auf- und niederschwankenden, doch stetig fortschreitenden
-      Menschheitsentwickelung in dichterischem Ausdruck. Wenn irgend etwas, so zeigt die
-      Dichtung eines Volkes dessen wahrstes, tiefinnerstes Seelenleben,
-      sein Ideal und seine Kultur; die politische Geschichte desselben dagegen
-      mehr das Ringen, diesem gerecht zu werden, es zu verwirklichen. Daß
-      dabei das eine Moment gegen das andre zeitweilig vorauseilt oder zurücktritt, erklärt sich aus denselben
-      natürlichen Bedingungen, unter denen sich dieser Kampf zwischen Ideal und
-      Wirklichkeit im einzelnen Individuum abspielt. Die Resultate einer derartigen
-      Zusammenfassung wären bedeutend genug. Dann aber Verlieren alle Darstellungen
-      der Weltlitteratur auch dadurch wieder ziemlich an Faßlichkeit, daß, wie dies
-      allerdings nicht anders geht, die einzelnen Völker eben nacheinander behandelt werden müssen. — Im allgemeinen jedoch mangelt ebenso auch unsern nur
-      deutschen Lehr- und Schul-Litteraturgeschichten ein das Ganze zwingender Gesichtspunkt. Sie geben die äußeren Thatsachen und Daten, aber
-      ohne Uebersichtlichkeit, ohne Entwickelung. Mit bloßem Zusammenfassen und
-      Nebeneinanderstellen der einzelnen Perioden und Bewegungen ist, namentlich dem
-      Lernenden, nicht viel geholfen; wenn er bei Herder angelangt ist, findet er
-      nicht mehr zu Veldeke zurück. Es fehlt ein Faden, der durch das Ganze leitet und eine
-      Orientierung ermöglicht. Scherer versuchte ein Solches mit seiner Wellentheorie.
-      Mag dieselbe immerhin auch mehr phantastisch als objektiv-wissenschaftlich sein, so wird sie doch jedem, der sie sich ein einziges Mal klar
-      gemacht, treu im Gedächtnis haften und ein fester Maßstab sein. Es
-      ist dabei dies eine schwerwiegende Moment, das eben nicht als bloß zu
-      verlachende Phantasie anzusehen ist: daß diese Theorie, wenn schon mit
-      Zwang, doch das ganze große Gebiet unter einen einheitlichen Gedanken spannt,
-      und so eine Uebersicht gestattet, die sonst eben nicht da ist. Was er
-      gewollt, war schließlich dasselbe, wenn die Parallele erlaubt ist, was für die
-      Sprache Grimm durch sein Gesetz der Lautverschiebung gefunden hat.
-   </p>
-   <p>
-      Es mag überraschend sein, wie viel fremde Elemente in unsrer Dichtung wirksam
-      wurden und waren; dabei aber darf nicht vergessen werden, daß ein Strom nicht
-      bloß Oberfläche hat, sondern auch Tiefgang und diese fremden Elemente nach ihrer
-      Einmündung nicht solche blieben, so wenig, als etwa die Mosel bei ihrem Einfluß in
-      den Rhein Mosel bleibt, sondern sich sofort vermischten und dadurch eine
-      zeitweilige Färbung des Hauptflusses veranlaßten, die sich aber allmählich verlief.
-      Unsere Dichtung ist deshalb nicht weniger <em>unsere</em> Dichtung und nicht weniger deutsch; der Rhein wird immer der Rhein sein und nicht bloß
-      dem Namen nach, obgleich er sich nur aus den Gewässern von hundert andern Bächen und Flüssen zusammensammelt und vertrocknen
-      würde, falls diese versiegten. Wenn Gottfried von Straßburg z. B. zu An
-      fang des dreizehnten Jahrhunderts auch nach dem Französischen des
-      Thomas von Bretagne schrieb, Wolfram von Eschenbach meist nach Chrêtien de
-      Troyes arbeitete, so sind Tristan und Parzival demungeachtet <em>unser</em>
-      geistiges Eigentum und verliert weder jener noch dieser an historischer
-      Bedeutung, denn sie schufen Vorbilder, an welche spätere Zeiten,
-      der fremden Quelle vergessend, nun unmittelbar anknüpfen konnten. Auch galt ja der
-      Satz, daß ein selbstständig schöpferisches Hervorbringen der Dichter
-      des Mittelalteiss völlig fremd gewesen sei, nie in der schroffen Unbedingtheit,
-      die er auszudrücken scheint: als ob alle jene Dichter nichts weiter als
-      mechanische Uebersetzer gewesen.
-   </p>
-   <p>
-      Der Weg, auf welchem fremde Stoffe, Ideen und Anschauungen bei uns Eingang
-      fanden und von Einfluß wurden, ist allerdings keineswegs immer der gleiche.
-      Tritt dabei das eine Mal mehr die politisch-soziale Verbindung der beiden Völker
-      in den Vordergrund, ist ein anderes Mal die Einwirkung vorwiegend
-      bloß litterarischer Natur; doch verkettet sich beides meist so eng, daß eine Trennung fast umnöglich ist. So erzieht sich in den Kreuzzügen unser bis
-      dahin schwerfälliges und unbeholfenes Ritterwesen nach dem Muster des
-      französischen ganz und gar zu dessen feineren Lebens- und
-      Gesellschaftsformen, wodurch dann auch die aufs engste damit verbundene und ebenso
-      schon weit selbständigere und ausgebildetere französische Litteratur den
-      nachhaltigsten Einfluß gewinnt. Dieser aber ist in vielem wieder ein
-      völlig andrer als die Einwirkung, welche, abgesehen von der veränderten
-      ästhetischen Anschauung, sechshundert Jahre später etwa Diderot auf Lessing hatte,
-      oder als der Einfluß, von welchem Shakespeare auf diesen wurde. Soll
-      ein Unterschied herausgeklügelt werden, so dürfte sich vielleicht im allgemeinen
-      unsre Litteratur in den älteren Perioden den fremden Beeinflussungen
-      gegenüber etwas passiver, in den neueren aktiver entpfangend verhalten.
-   </p>
-   <p>
-      Wenn aber ferner z. B. zur Sturm- und Drangzeit des vorigen
-      Jahrhunderts, in der vorwiegend französischer und englischer Einfluß sich
-      geltend macht, die tabellarsische Zeichnung nur ein schwaches
-      Durchschimmern reindeutscher Dichtung bemerken läßt, so ist dies doch auch nicht zu
-      fassen, als ob nun von A bis Z jeder, der überhaupt schrieb, Rousseau oder Shakespeare
-      excerpiert und nachgeahmt hätte; es ist nur die ganze Periode, welche
-      sich so charakterisiert. Die Tafel hat ein derartige Irrtümer ausschließendes
-      Bekanntsein mit unsrer Litteratur zur ersten, selbstverständlichen Voraussetzung. Goethe blieb nicht sein ganzes Leben lang in dem Ideenkreise,
-      aus dem er seinen Werther herausschuf, und in Schillers Wallenstein wurden ganz
-      andre Bedingungen wirksam, als etwa in Kabale und Liebe. Im großen und ganzen habe
-      ich die einzelnen Namen in <em>der</em> Zeit angegeben, welche für die
-      betreffenden Träger derselben ungefähr den durchschnittlichen Höhepunkt
-      des Schaffens kennzeichnet. Mag ein solches Verfahren anzufechten sein, so kann ihm, wie ich glaube, doch nicht der Vorwurf der Willkür
-      gemacht werden. Dem einzelnen Dichter seine richtige Stellung innerhalb des Flusses anzuweisen, in wie weit er unter diesem oder jenem Einfluß
-      steht, muß dem überlassen bleiben, der sich des Näheren damit beschäftigt hat,
-      der da weiß, daß Walter von der Vogelweide z. B. nicht mit den Nachahmern der
-      provençalischen Lyrik geht, sondern daß <em>er</em> gerade, im Gegensatz zu diesen, einer reindeutschen Lyrik Bahn bricht. Aus der
-      Zeichnung kann sowohl das eine als das andre erlesen werden, doch ist
-      einem leichteren Zurechtfinden durch möglichst genauen Druck an der entsprechenden
-      Stelle entgegengekommen. Nur bei den hervorragendsten Ver tretern unserer zweiten klassischen Blütezeit mußte von dem Gesagten abgewichen
-      werden, da sie eine Entwickelung durchmachten, die bei Dichtern früherer Perioden in diesem Maße beinahe nie zu finden ist. Ich bezeichnete daher bei
-      ihnen vermittelst kleiner Zahlen nur den erfolgreichen Anfang ihres
-      Schaffens.
-   </p>
-   <p>
-      Für den Fachmann sind diese Andeutungen unnötig, für den Laien dürften sie
-      genügen. Es ist freilich stets eine mißliche Sache, diesen zwei Parteien gerecht
-      werden zu wollen; dennoch hoffe ich, daß es mir wenigstens in der Hauptsache gelungen, das beiderseitige Interesse zu konzentrieren.
-   </p>
-   <p>
-      Die Trümmer der gotischen Litteratur wurden nicht berücksichtigt, da sie sich
-      auf Ulfilas Bibelübersetzung; Bruchstücke eines Kommentars zum
-      Evangelium Johannis, die sogenannte Skeireins; ein paar Urkunden und ein
-      Kalenderblatt beschränken. Die Tafel hätte dadurch nur eine zwecklose Vergrößerung erfahren. Außerdem bildet das Gotische wohl die älteste
-      Ueberlieferung unserer germanischen Sprache, steht aber doch nicht in un
-      mittelbarem Zusammenhang mit dem Althochdeutschen. Im
-      allgemeinen habe ich nur die bedeutenderen Denkmäler angeführt. Sämtliche
-      Titel und Namen zu bemerken, hätte die Uebersicht beeinträchtigt und
-      wäre unnützes Beiwerk gewesen. Der Fachmann kann, was zu seinem Zwecke fehlt,
-      leicht einzeichnen, wenn ihm an Vollständigkeit liegt. Diese wäre gewiß
-      allgemein wünschenswert gewesen, mußte aber im Hinblick auf das Ganze
-      unterbleiben. Die einzelnen Kreise benennen die beigegebenen Umschriften zur
-      Genüge. Besonders für die neuere und neueste Zeit wäre es fast unmöglich gewesen, alle Namen zu nennen, selbst nur die hervorragenden. Da aber für
-      diese Jahrhunderte ohnehin eine nähere Bekanntschaft vorausgesetzt werden durfte, schien es mir zweckdienlicher, die einzelnen Perioden und
-      Richtungen zusammenzufassen und unter ihren überall gäng und gäben
-      Bezeichnungen anzuführen. Um aber jeden Vorwurf zu vermeiden, habe
-      ich die Kreise numeriert und zur Seite einige Namen beigesetzt.
-   </p>
-   <p>
-      Die Einzeichnung der Heldensage geschah im vierzehnten Jahrhundert und bildet da
-      ein Nebenkärtchen. Sie hätte streng genommen an den Kopf der Tafel
-      gehört, wo sie sich aber nicht gut hätte unterbringen lassen. Ein näheres Eingehen
-      auf die Heldensage selbst und ein Verfolgen ihrer einzelnen Weiterbildungen
-      durch die Jahrhunderte wäre eine besondere Arbeit gewesen und hätte einer eignen Tafel bedurft, wenn sich halbwegs eine Uebersicht
-      ermöglichen sollte. Ich habe mich deshalb auf Nennung der Kreise beschränkt mit
-      Angabe der Hauptgestalten, um welche sich die einzelnen Dichtungen gruppieren.
-   </p>
-   <p>
-      Die Anordnung des Ganzen teilt sich, soweit durchführbar, dahin, daß der Einfluß
-      der romanischen und der mit diesen geistig verwandteren Länder auf
-      die linke Seite, der der germanischen auf die rechte zu stehen kam (vom Ursprung des
-      Flusses aus gesehen umgekehrt) und jener in helleren, dieser in
-      dunkleren Farben gehalten wurde. Die Einwirkung des klassischen Altertums, der Antike, welche sich oft genug auf beide verkreuzt, geschieht meist von
-      rechts aber auch von links, da hier die Darstellung keine strenge Konsequenz einhalten ließ.
-   </p>
-   <p>
-      Was die Einflußarme anbelangt, so ist ihre Zeichnung, abgesehen von ihrer
-      verschiedenen Stärke, eine willkürliche und außerhalb der beigegebenen
-      Chronologie stehende; sie dieser einzuordnen ging nicht an. Die beigeschriebenen
-      fremden Namen ließen sich wohl verzehnfachen. Ich führte nur diejenigen Dichter
-      an, von denen eine Hauptwirkung ausging.
-   </p>
-   <p>
-      Das Hin und Her des Gesamtstroms möchte im großen die zeitweilige Neigung unsrer
-      Dichtung zu Volks- oder Kunstpoesie andeuten.
-   </p>
-   <p>
-      Die dann und wann vorkommenden Inseln sind lediglich äußeres Hilfsmittel,
-      verschiedene Richtungen deutlicher auseinanderzuhalten.
-   </p>
-   <p>
-      Die sprachliche Einteilung ist durch verschiedene Lineatur am linken Rande
-      hervorgehoben. Auf dem rechten läuft eine Chronologie unserer Kaiser und Könige,
-      um flüchtig an die jeweiligen politischen Zustände zu erinnern.
-   </p>
-   <p>
-      Von einem begleitenden Texte glaubte ich absehen zu dürfen; er wäre
-      einerseits überflüssig gewesen, und hätte andrerseits wieder, um nicht zur
-      Hauptsache zu werden, zu wenig bieten müssen. Sollte sich jedoch ein Bedürfnis
-      nach einem solchen geltend machen, läßt er sich nachtragen. Falls die Umstände
-      es erlauben, würde sich der Tafel später eine größere Arbeit über das behandelte
-      Thema anschließen.
-   </p>
-   <p>
-      Daß manches Datum und manche Linie, namentlich in Bezug auf die
-      Intensität eines fremden Einflusses, zu bestreiten ist und bestritten werden
-      wird, darf ich offen einräumen. Auch gegen die Fassung des Ganzen in Konzeption
-      und Ausführung ließe sich allerlei einwenden, wie z. B. daß die
-      anfangs betonte Unterscheidung von Volks- und Kunstpoesie nicht auch für die späteren
-      Jahrhunderte festgehalten wurde, daß die Breite des Hauptstroms keine mathematisch berechnete, und manches andre. Kritische Bemerkungen
-      werden bei eventueller Neuauflage sorgfältigste Berücksichtigung erfahren, um
-      eine möglichste Vervollkommnung anzustreben, obgleich diese wohl nie eine absolute
-      werden wird, da, von allem andern abgesehen, hier wie überall, immer auch die
-      einzelne subjektive Anschauung ein gewisses jus non appellandi beansprucht.
-   </p>
-   <p><em>Stuttgart,</em> 2. Januar 1890.
-   </p>
-</div> <!-- col -->
-</div> <!--row -->
-      </div>
-      <div class="modal-footer">
-
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-	  <!-- Modal About -->
-<div class="modal fade" id="info-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">About</h4>
-      </div>
-      <div class="modal-body">
-			<h3>About</h3>
-			<ul>
-				
-			</ul>
-			</p>
-      </div>
-      <div class="modal-footer">
-
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal index -->
-
-<div class="modal fade" id="map-index" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Index</h4>
-      </div>
-      <div class="modal-body">
-          <div class="index">
-        <h3>Authors</h3>
-<ul>
-   <li>
-      <h4>A</h4>
-      <ul>
-         <li><a class="jumplink" href="#z_ed2_746">Abschatz, Hans Assmann von</a></li>
-         <li><a class="jumplink" href="#z_ed2_456">Adelphus, Johannes</a></li>
-         <li><a class="jumplink" href="#z_ed2_650">Aeschylus</a></li>
-         <li><a class="jumplink" href="#z_ed2_280">Aesop</a></li>
-         <li><a class="jumplink" href="#z_ed2_480">Agricola, Johann</a></li>
-         <li><a class="jumplink" href="#z_ed2_409">Agricola, Rudolf</a></li>
-         <li><a class="jumplink" href="#z_ed2_482">Alberus, Erasmus</a></li>
-         <li><a class="jumplink" href="#z_ed2_126">Alcuin</a></li>
-         <li><a class="jumplink" href="#z_ed2_346">Alfonsi, Petrus</a></li>
-         <li><a class="jumplink" href="#z_ed2_113">Ambrosius Mediolanensis</a></li>
-         <li><a class="jumplink" href="#z_ed2_289">Ammenhausen, Konrad von</a></li>
-         <li><a class="jumplink" href="#z_ed2_644">Anakreon</a></li>
-         <li><a class="jumplink" href="#z_ed2_675">Aristophanes</a></li>
-         <li><a class="jumplink" href="#z_ed2_643">Aristoteles</a></li>
-         <li><a class="jumplink" href="#z_ed2_705">Arndt, Ernst Moritz</a></li>
-         <li><a class="jumplink" href="#z_ed2_237">Aue, Hartmann von</a></li>
-         <li><a class="jumplink" href="#z_ed2_742">Augier, Émile</a></li>
-         <li><a class="jumplink" href="#z_ed2_114">Augustinus Aurelius von Hippo</a></li>
-         <li><a class="jumplink" href="#z_ed2_572">Ayrer, Jakob</a></li>
-         <li><a class="jumplink" href="#z_ed2_260">David von Augsburg</a></li>
-      </ul>
-   </li>
-   <li>
-      <h4>B</h4>
-      <ul>
-         <li><a class="jumplink" href="#z_ed2_455">Bebel, Heinrich</a></li>
-         <li><a class="jumplink" href="#z_ed2_402">Beheim, Michael</a></li>
-         <li><a class="jumplink" href="#z_ed2_288">Beringen, Heinrich von</a></li>
-         <li><a class="jumplink" href="#z_ed2_274">Berthold Ratisbonensis</a></li>
-         <li><a class="jumplink" href="#z_ed2_739">Bjørnson, Bjørnstjerne</a></li>
-         <li><a class="jumplink" href="#z_ed2_407">Boccaccio, Giovanni</a></li>
-         <li><a class="jumplink" href="#z_ed2_736">Bodenstedt, Friedrich</a></li>
-         <li><a class="jumplink" href="#z_ed2_637">Bodmer, Johann Jakob</a></li>
-         <li><a class="jumplink" href="#z_ed2_284">Boner, Ulrich</a></li>
-         <li><a class="jumplink" href="#z_ed2_251">Botenlauben, Otto von</a></li>
-         <li><a class="jumplink" href="#z_ed2_424">Brant, Sebastian</a></li>
-         <li><a class="jumplink" href="#z_ed2_747">Braunschweig, Anton Ulrich von</a></li>
-         <li><a class="jumplink" href="#z_ed2_638">Breitinger, Johann Jakob</a></li>
-         <li><a class="jumplink" href="#z_ed2_690">Brentano, Clemens</a></li>
-         <li><a class="jumplink" href="#z_ed2_602">Bucholtz, Andreas Heinrich</a></li>
-         <li><a class="jumplink" href="#z_ed2_476">Bugenhagen, Johannes</a></li>
-         <li><a class="jumplink" href="#z_ed2_704">Bulwer-Lytton, Edward George</a></li>
-         <li><a class="jumplink" href="#z_ed2_220">Burggraf von Regensburg</a></li>
-         <li><a class="jumplink" href="#z_ed2_231">Burggraf von Rietenburg</a></li>
-         <li><a class="jumplink" href="#z_ed2_708">Byron, Lord George Gordon</a></li>
-         <li><a class="jumplink" href="#z_ed2_717">Börne, Ludwig</a></li>
-         <li><a class="jumplink" href="#z_ed2_387">Bühel, Hans von</a></li>
-         <li><a class="jumplink" href="#z_ed2_658">Bürger, Gottfried August</a></li>
-      </ul>
-   </li>
-   <li>
-      <h4>C</h4>
-      <ul>
-         <li><a class="jumplink" href="#z_ed2_347">Caesarius Heisterbacensis</a></li>
-         <li><a class="jumplink" href="#z_ed2_685">Calderón, Pedro de la Barca</a></li>
-         <li><a class="jumplink" href="#z_ed2_301">Callisthenes</a></li>
-         <li><a class="jumplink" href="#z_ed2_425">Celtis, Konrad</a></li>
-         <li><a class="jumplink" href="#z_ed2_384">Cersne, Eberhard von</a></li>
-         <li><a class="jumplink" href="#z_ed2_684">Cervantes, Miguel de</a></li>
-         <li><a class="jumplink" href="#z_ed2_287">Cessolis, Jacobus de</a></li>
-         <li><a class="jumplink" href="#z_ed2_696">Chamisso, Adelbert von</a></li>
-         <li><a class="jumplink" href="#z_ed2_254">Circlaere, Thomasin</a></li>
-         <li><a class="jumplink" href="#z_ed2_358">Comestor, Petrus</a></li>
-         <li><a class="jumplink" href="#z_ed2_620">Corneille, Pierre</a></li>
-         <li><a class="jumplink" href="#z_ed2_457">Crotus Rubeanus</a></li>
-         <li><a class="jumplink" href="#z_ed2_631">Gaius Valerius Catullus</a></li>
-      </ul>
-   </li>
-   <li>
-      <h4>D</h4>
-      <ul>
-         <li><a class="jumplink" href="#z_ed2_217">Aist, Dietmar von</a></li>
-         <li><a class="jumplink" href="#z_ed2_681">Alighieri, Dante</a></li>
-         <li><a class="jumplink" href="#z_ed2_599">Dach, Simon</a></li>
-         <li><a class="jumplink" href="#z_ed2_483">Dedekind, Friedrich</a></li>
-         <li><a class="jumplink" href="#z_ed2_626">Defoe, Daniel</a></li>
-         <li><a class="jumplink" href="#z_ed2_624">Destouches, Philippe Néricault</a></li>
-         <li><a class="jumplink" href="#z_ed2_723">Dickens, Charles</a></li>
-         <li><a class="jumplink" href="#z_ed2_647">Diderot, Denis</a></li>
-         <li><a class="jumplink" href="#z_ed2_730">Dingelstedt, Franz von</a></li>
-         <li><a class="jumplink" href="#z_ed2_757">Dumas, Alexandre</a></li>
-         <li><a class="jumplink" href="#z_ed2_318">Thomas d'Angleterre</a></li>
-      </ul>
-   </li>
-   <li>
-      <h4>E</h4>
-      <ul>
-         <li><a class="jumplink" href="#z_ed2_426">Desiderius, Erasmus</a></li>
-         <li><a class="jumplink" href="#z_ed2_697">Eichendorff, Joseph von</a></li>
-         <li><a class="jumplink" href="#z_ed2_226">Eilhart von Oberge</a></li>
-         <li><a class="jumplink" href="#z_ed2_243">Eschenbach, Wolfram von</a></li>
-         <li><a class="jumplink" href="#z_ed2_278">Etzenbach, Ulrich von</a></li>
-         <li><a class="jumplink" href="#z_ed2_419">Eyb, Albrecht von</a></li>
-         <li><a class="jumplink" href="#z_ed2_375">Meister Eckhart</a></li>
-      </ul>
-   </li>
-   <li>
-      <h4>F</h4>
-      <ul>
-         <li><a class="jumplink" href="#z_ed2_729">Fallersleben, August Heinrich</a></li>
-         <li><a class="jumplink" href="#z_ed2_230">Fenis-Neuenburg, Rudolf von</a></li>
-         <li><a class="jumplink" href="#z_ed2_642">Fielding, Henry</a></li>
-         <li><a class="jumplink" href="#z_ed2_493">Fischart, Johann</a></li>
-         <li><a class="jumplink" href="#z_ed2_262">Fleck, Konrad</a></li>
-         <li><a class="jumplink" href="#z_ed2_600">Fleming, Paul</a></li>
-         <li><a class="jumplink" href="#z_ed2_403">Folz, Hans</a></li>
-         <li><a class="jumplink" href="#z_ed2_694">Fouqué, Friedrich de la Motte</a></li>
-         <li><a class="jumplink" href="#z_ed2_275">Freiberg, Heinrich von</a></li>
-         <li><a class="jumplink" href="#z_ed2_350">Freidank</a></li>
-         <li><a class="jumplink" href="#z_ed2_733">Freiligrath, Ferdinand</a></li>
-         <li><a class="jumplink" href="#z_ed2_554">Friedrich der Große</a></li>
-         <li><a class="jumplink" href="#z_ed2_533">Frischlin, Nicodemus</a></li>
-         <li><a class="jumplink" href="#z_ed2_247">Fritzlar, Herbort von</a></li>
-         <li><a class="jumplink" href="#z_ed2_337">Fußesbrunnen, Konrad von</a></li>
-         <li><a class="jumplink" href="#z_ed2_421">Füetrer, Ulrich</a></li>
-      </ul>
-   </li>
-   <li>
-      <h4>G</h4>
-      <ul>
-         <li><a class="jumplink" href="#z_ed2_307">Galfredus Monumetensis</a></li>
-         <li><a class="jumplink" href="#z_ed2_418">Geiler, Johannes von Kaysersberg</a></li>
-         <li><a class="jumplink" href="#z_ed2_462">Gengenbach, Pamphilus</a></li>
-         <li><a class="jumplink" href="#z_ed2_484">Gennep, Jasper von</a></li>
-         <li><a class="jumplink" href="#z_ed2_604">Gerhardt, Paulus</a></li>
-         <li><a class="jumplink" href="#z_ed2_668">Gerstenberg, Heinrich Wilhelm von</a></li>
-         <li><a class="jumplink" href="#z_ed2_663">Gleim, Johann Wilhelm Ludwig</a></li>
-         <li><a class="jumplink" href="#z_ed2_359">Godefridus Viterbiensis</a></li>
-         <li><a class="jumplink" href="#z_ed2_660">Goethe, Johann Wolfgang von</a></li>
-         <li><a class="jumplink" href="#z_ed2_679">Goldoni, Carlo</a></li>
-         <li><a class="jumplink" href="#z_ed2_246">Gottfried von Straßburg</a></li>
-         <li><a class="jumplink" href="#z_ed2_680">Gozzi, Carlo</a></li>
-         <li><a class="jumplink" href="#z_ed2_115">Gregor I (Papst)</a></li>
-         <li><a class="jumplink" href="#z_ed2_711">Grillparzer, Franz</a></li>
-         <li><a class="jumplink" href="#z_ed2_609">Grimmelshausen, Hans Jakob Christoffel von</a></li>
-         <li><a class="jumplink" href="#z_ed2_404">Groote, Gerhard de</a></li>
-         <li><a class="jumplink" href="#z_ed2_601">Gryphius, Andreas</a></li>
-         <li><a class="jumplink" href="#z_ed2_700">Grün, Anastasius</a></li>
-         <li><a class="jumplink" href="#z_ed2_597">Guarini, Battista</a></li>
-         <li><a class="jumplink" href="#z_ed2_423">Gundacker von Thernbergder Pfaff von Kalenberg</a></li>
-         <li><a class="jumplink" href="#z_ed2_229">Gutenburg, Ulrich von</a></li>
-         <li><a class="jumplink" href="#z_ed2_720">Gutzkow, Karl</a></li>
-         <li><a class="jumplink" href="#z_ed2_627">Günther, Johann Christian</a></li>
-         <li><a class="jumplink" href="#z_ed2_242">Wirnt von Grafenberg</a></li>
-      </ul>
-   </li>
-   <li>
-      <h4>H</h4>
-      <ul>
-         <li><a class="jumplink" href="#z_ed2_234">Bernger von Horheim</a></li>
-         <li><a class="jumplink" href="#z_ed2_376">Hadloub, Johannes</a></li>
-         <li><a class="jumplink" href="#z_ed2_248">Halberstadt, Albrecht von</a></li>
-         <li><a class="jumplink" href="#z_ed2_639">Haller, Albrecht von</a></li>
-         <li><a class="jumplink" href="#z_ed2_698">Halm, Friedrich</a></li>
-         <li><a class="jumplink" href="#z_ed2_228">Hausen, Friedrich von</a></li>
-         <li><a class="jumplink" href="#z_ed2_239">Heimesfurt, Konrad von</a></li>
-         <li><a class="jumplink" href="#z_ed2_716">Heine, Heinrich</a></li>
-         <li><a class="jumplink" href="#z_ed2_322">Heinrich  Gleißner</a></li>
-         <li><a class="jumplink" href="#z_ed2_286">Heinrich Frauenlob</a></li>
-         <li><a class="jumplink" href="#z_ed2_296">Heinrich der Teichner</a></li>
-         <li><a class="jumplink" href="#z_ed2_297">Heinrich von Mügeln</a></li>
-         <li><a class="jumplink" href="#z_ed2_366">Helbling, Seyfried</a></li>
-         <li><a class="jumplink" href="#z_ed2_659">Herder, Johann Gottfried</a></li>
-         <li><a class="jumplink" href="#z_ed2_314">Herger</a></li>
-         <li><a class="jumplink" href="#z_ed2_732">Herwegh, Georg</a></li>
-         <li><a class="jumplink" href="#z_ed2_373">Hessler, Heinrich</a></li>
-         <li><a class="jumplink" href="#z_ed2_692">Hoffmann, E.T.A.</a></li>
-         <li><a class="jumplink" href="#z_ed2_613">Hofmann von Hofmannswaldau, Christian</a></li>
-         <li><a class="jumplink" href="#z_ed2_629">Homer</a></li>
-         <li><a class="jumplink" href="#z_ed2_129">Hrabanus Maurus</a></li>
-         <li><a class="jumplink" href="#z_ed2_137">Hrotsvita Gandeshemensis</a></li>
-         <li><a class="jumplink" href="#z_ed2_458">Hutten, Ulrich von</a></li>
-         <li><a class="jumplink" href="#z_ed2_413">Hätzlerin, Clara</a></li>
-         <li><a class="jumplink" href="#z_ed2_745">Hénot, Georges</a></li>
-         <li><a class="jumplink" href="#z_ed2_628">Quintus Horatius Flaccus</a></li>
-      </ul>
-   </li>
-   <li>
-      <h4>I</h4>
-      <ul>
-         <li><a class="jumplink" href="#z_ed2_741">Ibsen, Henrik</a></li>
-         <li><a class="jumplink" href="#z_ed2_474">Ickelsamer, Valentin</a></li>
-      </ul>
-   </li>
-   <li>
-      <h4>J</h4>
-      <ul>
-         <li><a class="jumplink" href="#z_ed2_236">Albrecht von Johansdorf</a></li>
-         <li><a class="jumplink" href="#z_ed2_664">Jacobi, Friedrich Heinrich</a></li>
-         <li><a class="jumplink" href="#z_ed2_379">Jeroschin, Nicolaus</a></li>
-         <li><a class="jumplink" href="#z_ed2_580">Jodelle, Étienne</a></li>
-         <li><a class="jumplink" href="#z_ed2_283">Johann von Würzburg</a></li>
-      </ul>
-   </li>
-   <li>
-      <h4>K</h4>
-      <ul>
-         <li><a class="jumplink" href="#z_ed2_310">Der Kührenberger</a></li>
-         <li><a class="jumplink" href="#z_ed2_714">Kerner, Justinus</a></li>
-         <li><a class="jumplink" href="#z_ed2_740">Kielland, Alexander</a></li>
-         <li><a class="jumplink" href="#z_ed2_666">Kleist, Heinrich von</a></li>
-         <li><a class="jumplink" href="#z_ed2_670">Klinger, Friedrich Maximilian von</a></li>
-         <li><a class="jumplink" href="#z_ed2_656">Klopstock, Friedrich Gottlieb</a></li>
-         <li><a class="jumplink" href="#z_ed2_258">Konrad von Marburg</a></li>
-         <li><a class="jumplink" href="#z_ed2_273">Konrad von Würzburg</a></li>
-         <li><a class="jumplink" href="#z_ed2_706">Körner, Theodor</a></li>
-      </ul>
-   </li>
-   <li>
-      <h4>L</h4>
-      <ul>
-         <li><a class="jumplink" href="#z_ed2_291">Laber, Hadamar von</a></li>
-         <li><a class="jumplink" href="#z_ed2_625">Lafontaine, August</a></li>
-         <li><a class="jumplink" href="#z_ed2_267">Lamprecht von Regensburg</a></li>
-         <li><a class="jumplink" href="#z_ed2_277">Langenstein, Hugo von</a></li>
-         <li><a class="jumplink" href="#z_ed2_721">Laube, Heinrich</a></li>
-         <li><a class="jumplink" href="#z_ed2_584">Lauremberg, Johann</a></li>
-         <li><a class="jumplink" href="#z_ed2_667">Leisewitz, Johann Anton</a></li>
-         <li><a class="jumplink" href="#z_ed2_669">Lenz, Jakob Michael Reinhold</a></li>
-         <li><a class="jumplink" href="#z_ed2_304">Leo von Neapel (Archipresbyter)</a></li>
-         <li><a class="jumplink" href="#z_ed2_454">Locher, Jacob</a></li>
-         <li><a class="jumplink" href="#z_ed2_590">Logau, Friedrich von</a></li>
-         <li><a class="jumplink" href="#z_ed2_614">Lohenstein, Daniel Caspar von</a></li>
-         <li><a class="jumplink" href="#z_ed2_470">Luther, Martin</a></li>
-      </ul>
-   </li>
-   <li>
-      <h4>M</h4>
-      <ul>
-         <li><a class="jumplink" href="#z_ed2_361">Der Marner</a></li>
-         <li><a class="jumplink" href="#z_ed2_662">Macpherson, James</a></li>
-         <li><a class="jumplink" href="#z_ed2_582">Malherbe, François de</a></li>
-         <li><a class="jumplink" href="#z_ed2_464">Manuel, Nicolaus</a></li>
-         <li><a class="jumplink" href="#z_ed2_630">Marcus Valerius Martialis</a></li>
-         <li><a class="jumplink" href="#z_ed2_579">Marot, Clément</a></li>
-         <li><a class="jumplink" href="#z_ed2_221">Meinloh von Sevelingen</a></li>
-         <li><a class="jumplink" href="#z_ed2_473">Melanchthon, Philipp</a></li>
-         <li><a class="jumplink" href="#z_ed2_490">Melissus, Paulus</a></li>
-         <li><a class="jumplink" href="#z_ed2_633">Milton, John</a></li>
-         <li><a class="jumplink" href="#z_ed2_611">Montemaior</a></li>
-         <li><a class="jumplink" href="#z_ed2_381">Montfort, Hugo von</a></li>
-         <li><a class="jumplink" href="#z_ed2_641">Moore, Thomas</a></li>
-         <li><a class="jumplink" href="#z_ed2_752">Morhof, Daniel Georg</a></li>
-         <li><a class="jumplink" href="#z_ed2_240">Morungen, Heinrich von</a></li>
-         <li><a class="jumplink" href="#z_ed2_719">Mundt, Theodor</a></li>
-         <li><a class="jumplink" href="#z_ed2_463">Murner, Thomas</a></li>
-         <li><a class="jumplink" href="#z_ed2_383">Muskatblüt</a></li>
-         <li><a class="jumplink" href="#z_ed2_715">Mörike, Eduard</a></li>
-         <li><a class="jumplink" href="#z_ed2_710">Müllner, Amandus</a></li>
-      </ul>
-   </li>
-   <li>
-      <h4>N</h4>
-      <ul>
-         <li><a class="jumplink" href="#z_ed2_478">Naogeorgus, Thomas</a></li>
-         <li><a class="jumplink" href="#z_ed2_605">Neander, Joachim</a></li>
-         <li><a class="jumplink" href="#z_ed2_266">Neifen, Gottfried von</a></li>
-         <li><a class="jumplink" href="#z_ed2_755">Neukirch, Benjamin</a></li>
-         <li><a class="jumplink" href="#z_ed2_606">Neumark, Georg</a></li>
-         <li><a class="jumplink" href="#z_ed2_754">Neumeister, Erdmann</a></li>
-         <li><a class="jumplink" href="#z_ed2_282">Neustadt, Heinrich von</a></li>
-         <li><a class="jumplink" href="#z_ed2_293">Nikolaus von Basel</a></li>
-         <li><a class="jumplink" href="#z_ed2_077">Notker I. Babulus</a></li>
-         <li><a class="jumplink" href="#z_ed2_087">Notker III Labeo Teutonicus</a></li>
-         <li><a class="jumplink" href="#z_ed2_689">Novalis</a></li>
-         <li><a class="jumplink" href="#z_ed2_295">Nördlingen, Heinrich von</a></li>
-      </ul>
-   </li>
-   <li>
-      <h4>O</h4>
-      <ul>
-         <li><a class="jumplink" href="#z_ed2_587">Opitz, Martin</a></li>
-         <li><a class="jumplink" href="#z_ed2_201">Publius Ovidius Naso</a></li>
-      </ul>
-   </li>
-   <li>
-      <h4>P</h4>
-      <ul>
-         <li><a class="jumplink" href="#z_ed2_459">Pauli, Johann</a></li>
-         <li><a class="jumplink" href="#z_ed2_653">Percy</a></li>
-         <li><a class="jumplink" href="#z_ed2_646">Petrarca, Francesco</a></li>
-         <li><a class="jumplink" href="#z_ed2_433">Philipp von Schwaben</a></li>
-         <li><a class="jumplink" href="#z_ed2_619">Pietsch, Ludwig</a></li>
-         <li><a class="jumplink" href="#z_ed2_202">Pindarus</a></li>
-         <li><a class="jumplink" href="#z_ed2_722">Platen, August von</a></li>
-         <li><a class="jumplink" href="#z_ed2_758">Ponsard, François</a></li>
-         <li><a class="jumplink" href="#z_ed2_622">Poquelin, Jean-Baptiste</a></li>
-         <li><a class="jumplink" href="#z_ed2_731">Prutz, Robert Eduard</a></li>
-         <li><a class="jumplink" href="#z_ed2_491">Puschmann, Adam</a></li>
-         <li><a class="jumplink" href="#z_ed2_737">Puškin, Aleksandr</a></li>
-      </ul>
-   </li>
-   <li>
-      <h4>R</h4>
-      <ul>
-         <li><a class="jumplink" href="#z_ed2_378">Barthel Regenbogen</a></li>
-         <li><a class="jumplink" href="#z_ed2_492">Rabelais, François</a></li>
-         <li><a class="jumplink" href="#z_ed2_621">Racine, Jean</a></li>
-         <li><a class="jumplink" href="#z_ed2_665">Ramler, Karl Wilhelm</a></li>
-         <li><a class="jumplink" href="#z_ed2_477">Rebhun, Paul</a></li>
-         <li><a class="jumplink" href="#z_ed2_623">Regnard, Jean-François</a></li>
-         <li><a class="jumplink" href="#z_ed2_412">Reichertshausen, Jakob Püterich von</a></li>
-         <li><a class="jumplink" href="#z_ed2_414">Reuchlin, Johann</a></li>
-         <li><a class="jumplink" href="#z_ed2_256">Reuenthal, Neidhart von</a></li>
-         <li><a class="jumplink" href="#z_ed2_410">Rhön, Kaspar von der</a></li>
-         <li><a class="jumplink" href="#z_ed2_439">Richard von Cornwall</a></li>
-         <li><a class="jumplink" href="#z_ed2_636">Richardson, Samuel</a></li>
-         <li><a class="jumplink" href="#z_ed2_595">Rist, Johann</a></li>
-         <li><a class="jumplink" href="#z_ed2_575">Rollenhagen, Georg</a></li>
-         <li><a class="jumplink" href="#z_ed2_581">Ronsard, Pierre de</a></li>
-         <li><a class="jumplink" href="#z_ed2_401">Rosenplüt, Hans</a></li>
-         <li><a class="jumplink" href="#z_ed2_648">Rousseau, Jean-Jacques</a></li>
-         <li><a class="jumplink" href="#z_ed2_261">Rudolf von Ems</a></li>
-         <li><a class="jumplink" href="#z_ed2_233">Rugge, Heinrich von</a></li>
-         <li><a class="jumplink" href="#z_ed2_294">Rulman Merswin</a></li>
-         <li><a class="jumplink" href="#z_ed2_232">Rute, Hartwig von</a></li>
-         <li><a class="jumplink" href="#z_ed2_734">Rückert, Friedrich</a></li>
-      </ul>
-   </li>
-   <li>
-      <h4>S</h4>
-      <ul>
-         <li><a class="jumplink" href="#z_ed2_235">Bligger von Steinach</a></li>
-         <li><a class="jumplink" href="#z_ed2_263">Der Stricker</a></li>
-         <li><a class="jumplink" href="#z_ed2_471">Sachs, Hans</a></li>
-         <li><a class="jumplink" href="#z_ed2_405">Sachsenheim, Hermann von</a></li>
-         <li><a class="jumplink" href="#z_ed2_743">Sardou, Victorien</a></li>
-         <li><a class="jumplink" href="#z_ed2_707">Schenkendorf, Max von</a></li>
-         <li><a class="jumplink" href="#z_ed2_661">Schiller, Johann Christoph Friedrich von</a></li>
-         <li><a class="jumplink" href="#z_ed2_594">Schottelius, Justus Georg</a></li>
-         <li><a class="jumplink" href="#z_ed2_673">Schubart, Ludwig</a></li>
-         <li><a class="jumplink" href="#z_ed2_695">Schulze, Ernst</a></li>
-         <li><a class="jumplink" href="#z_ed2_713">Schwab, Gustav</a></li>
-         <li><a class="jumplink" href="#z_ed2_253">Schwangau, Hiltbold von</a></li>
-         <li><a class="jumplink" href="#z_ed2_703">Scott, Walter</a></li>
-         <li><a class="jumplink" href="#z_ed2_728">Scribe, Eugène</a></li>
-         <li><a class="jumplink" href="#z_ed2_292">Seuse, Heinrich</a></li>
-         <li><a class="jumplink" href="#z_ed2_249">Seven, Leuthold von</a></li>
-         <li><a class="jumplink" href="#z_ed2_652">Shakespeare, William</a></li>
-         <li><a class="jumplink" href="#z_ed2_250">Singenberg, Ulrich von</a></li>
-         <li><a class="jumplink" href="#z_ed2_411">Soest, Johann von</a></li>
-         <li><a class="jumplink" href="#z_ed2_649">Sophocles</a></li>
-         <li><a class="jumplink" href="#z_ed2_578">Spangenberg, Wolfhart</a></li>
-         <li><a class="jumplink" href="#z_ed2_589">Spee, Friedrich von</a></li>
-         <li><a class="jumplink" href="#z_ed2_749">Spener, Philipp Jacob</a></li>
-         <li><a class="jumplink" href="#z_ed2_321">Spervogel</a></li>
-         <li><a class="jumplink" href="#z_ed2_415">Steinhöwel, Heinrich</a></li>
-         <li><a class="jumplink" href="#z_ed2_362">Steinmar</a></li>
-         <li><a class="jumplink" href="#z_ed2_655">Sterne, Laurence</a></li>
-         <li><a class="jumplink" href="#z_ed2_382">Suchenwirt, Peter</a></li>
-         <li><a class="jumplink" href="#z_ed2_702">Sue, Eugène</a></li>
-         <li><a class="jumplink" href="#z_ed2_654">Swift, Jonathan</a></li>
-      </ul>
-   </li>
-   <li>
-      <h4>T</h4>
-      <ul>
-         <li><a class="jumplink" href="#z_ed2_319">Chrétien de Troyes</a></li>
-         <li><a class="jumplink" href="#z_ed2_131">Tatian Syrus</a></li>
-         <li><a class="jumplink" href="#z_ed2_290">Tauler, Johannes</a></li>
-         <li><a class="jumplink" href="#z_ed2_725">Thackeray, William Makepeace</a></li>
-         <li><a class="jumplink" href="#z_ed2_688">Tieck, Ludwig</a></li>
-         <li><a class="jumplink" href="#z_ed2_279">Trimberg, Hugo von</a></li>
-         <li><a class="jumplink" href="#z_ed2_593">Tscherning, Andreas</a></li>
-         <li><a class="jumplink" href="#z_ed2_738">Turgenev, Ivan</a></li>
-         <li><a class="jumplink" href="#z_ed2_255">Türlin, Heinrich von dem</a></li>
-         <li><a class="jumplink" href="#z_ed2_269">Ulrich von  Türheim</a></li>
-      </ul>
-   </li>
-   <li>
-      <h4>U</h4>
-      <ul>
-         <li><a class="jumplink" href="#z_ed2_712">Uhland, Ludwig</a></li>
-         <li><a class="jumplink" href="#z_ed2_270">Ulrich von dem Türlin</a></li>
-      </ul>
-   </li>
-   <li>
-      <h4>V</h4>
-      <ul>
-         <li><a class="jumplink" href="#z_ed2_206">Publius Vergilius Maro</a></li>
-         <li><a class="jumplink" href="#z_ed2_686">Vega, Felix Lope de</a></li>
-         <li><a class="jumplink" href="#z_ed2_227">Veldeke, Heinrich von</a></li>
-         <li><a class="jumplink" href="#z_ed2_388">Vintler, Hans</a></li>
-         <li><a class="jumplink" href="#z_ed2_252">Vohburg-Hohenburg, Markgraf Berthold IV. von</a></li>
-         <li><a class="jumplink" href="#z_ed2_651">Voltaire</a></li>
-         <li><a class="jumplink" href="#z_ed2_592">Vondel, Joost van der</a></li>
-         <li><a class="jumplink" href="#z_ed2_678">Voß, Johann Heinrich</a></li>
-      </ul>
-   </li>
-   <li>
-      <h4>W</h4>
-      <ul>
-         <li><a class="jumplink" href="#z_ed2_308">Wace</a></li>
-         <li><a class="jumplink" href="#z_ed2_672">Wagner, Richard</a></li>
-         <li><a class="jumplink" href="#z_ed2_485">Waldis, Burkard</a></li>
-         <li><a class="jumplink" href="#z_ed2_244">Walther von der Vogelweide</a></li>
-         <li><a class="jumplink" href="#z_ed2_417">Weber, Veit</a></li>
-         <li><a class="jumplink" href="#z_ed2_585">Weckherlin, Georg Rodolf</a></li>
-         <li><a class="jumplink" href="#z_ed2_751">Weise, Christian</a></li>
-         <li><a class="jumplink" href="#z_ed2_264">Werner der Gärtner</a></li>
-         <li><a class="jumplink" href="#z_ed2_753">Wernicke, Christian</a></li>
-         <li><a class="jumplink" href="#z_ed2_479">Wickram, Jörg</a></li>
-         <li><a class="jumplink" href="#z_ed2_657">Wieland, Christoph Martin</a></li>
-         <li><a class="jumplink" href="#z_ed2_718">Wienbarg, Ludolf</a></li>
-         <li><a class="jumplink" href="#z_ed2_151">Willeramus Eberspergensis</a></li>
-         <li><a class="jumplink" href="#z_ed2_422">Wimpfeling, Jakob</a></li>
-         <li><a class="jumplink" href="#z_ed2_390">Wolkenstein, Oswald von</a></li>
-         <li><a class="jumplink" href="#z_ed2_420">Wyle, Niklas von</a></li>
-      </ul>
-   </li>
-   <li>
-      <h4>Z</h4>
-      <ul>
-         <li><a class="jumplink" href="#z_ed2_259">Reinmar von Zweter</a></li>
-         <li><a class="jumplink" href="#z_ed2_241">Zatzikhoven, Ulrich von</a></li>
-         <li><a class="jumplink" href="#z_ed2_699">Zedlitz, Joseph Christian von</a></li>
-         <li><a class="jumplink" href="#z_ed2_607">Zesen, Philipp von</a></li>
-         <li><a class="jumplink" href="#z_ed2_748">Ziegler-Klipphausen, Heinrich Anselm von</a></li>
-         <li><a class="jumplink" href="#z_ed2_588">Zincgref, Julius Wilhelm</a></li>
-         <li><a class="jumplink" href="#z_ed2_744">Zola, Émile</a></li>
-      </ul>
-   </li>
-</ul>
-</div>
-      </div>
-      <div class="modal-footer">
-
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-	  	<a name="tafel-start"></a>
-         <div class="row"><img class="img-responsive" src="img/Flaischlen-ed2-p1.png" usemap="#Flaischlen-ed2-p1"></div>
-         <div class="row"><img class="img-responsive" src="img/Flaischlen-ed2-p2.png" usemap="#Flaischlen-ed2-p2"></div>
-         <div class="row"><img class="img-responsive" src="img/Flaischlen-ed2-p3.png" usemap="#Flaischlen-ed2-p3"></div>
-      </div><!-- end container -->
-	  <footer class="footer">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8"><small>Börner, I., Fischer, F., Hechtl, A. & Trilcke, P. (Eds.) (2016), Cäsar Flaischlen's 'Graphische Litteratur-Tafel'. A Digital Edition. (Version: Alpha, October 2016). http://litteratur-tafel.weltliteratur.net</small></div>
-				<div class="col-md-4">
-					<p class="text-right">
-						<a href="mailto:ingo.boerner@univie.ac.at">Contact</a> |
-						<a role="button" data-toggle="modal" data-target="#info-modal" title="About">About</a> |
-						<a>Imprint</a>
-					</p>
-				</div>
-			</div>
-      </div>
-	  </footer>
-
-
-      <map name="Flaischlen-ed2-p1">
-        <area id="z_ed2_077" shape="rect" coords="810,2714,1002,2742" alt="Notker I. Babulus" href="http://d-nb.info/gnd/118588850"/>
-        <area id="z_ed2_087" shape="rect" coords="877,4555,1102,4614" alt="Notker III Labeo Teutonicus" href="http://d-nb.info/gnd/118588869"/>
-        <area id="z_ed2_112" shape="rect" coords="569,504,634,522" alt="Hilarius" href="http://d-nb.info/gnd/none"/>
-        <area id="z_ed2_113" shape="rect" coords="659,505,738,521" alt="Ambrosius" href="http://d-nb.info/gnd/11850245X"/>
-        <area id="z_ed2_114" shape="rect" coords="677,525,750,545" alt="Augustin" href="http://d-nb.info/gnd/118505114"/>
-        <area id="z_ed2_115" shape="rect" coords="772,524,824,545" alt="Gregor" href="http://d-nb.info/gnd/118541838"/>
-        <area id="z_ed2_121" shape="rect" coords="1096,497,1181,517" alt="Kaedmon" href="http://d-nb.info/gnd/none"/>
-        <area id="z_ed2_122" shape="rect" coords="1105,545,1149,565" alt="Beda" href="http://d-nb.info/gnd/none"/>
-        <area id="z_ed2_126" shape="rect" coords="829,1082,898,1103" alt="Alcuin" href="http://d-nb.info/gnd/118502026"/>
-        <area id="z_ed2_129" shape="rect" coords="715,1521,1065,1547" alt="Rhabanus Maurus" href="http://d-nb.info/gnd/118553909"/>
-        <area id="z_ed2_131" shape="rect" coords="939,1953,1012,1977" alt="Tatian" href="http://d-nb.info/gnd/11864310X"/>
-        <area id="z_ed2_137" shape="rect" coords="225,4120,547,4150" alt="Roswitha von Gandersheim" href="http://d-nb.info/gnd/118553941"/>
-        <area id="z_ed2_151" shape="rect" coords="793,5437,896,5461" alt="Williram" href="http://d-nb.info/gnd/118633406"/>
-      </map>
-
-      <map name="Flaischlen-ed2-p2">
-        <area id="z_ed2_201" shape="rect" coords="1044,252,1086,271" alt="Ovid" href="http://d-nb.info/gnd/118590995"/>
-          <area id="z_ed2_202" shape="rect" coords="1005,66,1074,87" alt="Pindarus" href="http://d-nb.info/gnd/118594427"/>
-          <area id="z_ed2_206" shape="rect" coords="1085,203,1157,219" alt="Vergil" href="http://d-nb.info/gnd/118626574"/>
-          <area id="z_ed2_217" shape="rect" coords="850,939,974,958" alt="Dietmar v. Eist" href="http://d-nb.info/gnd/11867191X"/>
-          <area id="z_ed2_220" shape="rect" coords="838,979,994,996" alt="Burggraf von Regensburg" href="http://d-nb.info/gnd/101245041"/>
-          <area id="z_ed2_221" shape="rect" coords="872,996,1080,1014" alt="Meinloh von Sevelingen" href="http://d-nb.info/gnd/100964648"/>
-          <area id="z_ed2_226" shape="rect" coords="811,1153,993,1183" alt="Eilhart von Oberge" href="http://d-nb.info/gnd/118529528"/>
-          <area id="z_ed2_227" shape="rect" coords="794,1202,897,1228" alt="Veldeke" href="http://d-nb.info/gnd/11854845X"/>
-          <area id="z_ed2_228" shape="rect" coords="236,1204,403,1224" alt="Friedrich von Hausen" href="http://d-nb.info/gnd/118693549"/>
-          <area id="z_ed2_229" shape="rect" coords="314,1228,476,1248" alt="Ulrich von Guotenburg" href="http://d-nb.info/gnd/100968848"/>
-          <area id="z_ed2_230" shape="rect" coords="339,1257,466,1274" alt="Rudolf von Fenis" href="http://d-nb.info/gnd/11879146X"/>
-          <area id="z_ed2_231" shape="rect" coords="295,1281,489,1304" alt="Burggraf von Rietenburg" href="http://d-nb.info/gnd/101245009"/>
-          <area id="z_ed2_232" shape="rect" coords="322,1307,457,1327" alt="Hartwig von Rute" href="http://d-nb.info/gnd/138078831"/>
-          <area id="z_ed2_233" shape="rect" coords="242,1332,376,1354" alt="Heinrich von Rugge" href="http://d-nb.info/gnd/118773755"/>
-          <area id="z_ed2_234" shape="rect" coords="390,1330,538,1349" alt="Bernger von Horheim" href="http://d-nb.info/gnd/102421684"/>
-          <area id="z_ed2_235" shape="rect" coords="211,1358,368,1381" alt="Bligger von Steinach" href="http://d-nb.info/gnd/118920952"/>
-          <area id="z_ed2_236" shape="rect" coords="380,1358,541,1376" alt="Albrecht von Johansdorf" href="http://d-nb.info/gnd/118501631"/>
-          <area id="z_ed2_237" shape="rect" coords="238,1413,474,1444" alt="Hartmann von Aue" href="http://d-nb.info/gnd/118546228"/>
-          <area id="z_ed2_239" shape="rect" coords="986,1416,1143,1435" alt="Konrad von Heimesfurt" href="http://d-nb.info/gnd/118866524"/>
-          <area id="z_ed2_240" shape="rect" coords="113,1501,325,1533" alt="Heinrich v. Morungen" href="http://d-nb.info/gnd/118709836"/>
-          <area id="z_ed2_241" shape="rect" coords="346,1488,547,1514" alt="Ulrich von Zazichofen" href="http://d-nb.info/gnd/118625349"/>
-          <area id="z_ed2_242" shape="rect" coords="333,1517,546,1547" alt="Wirnt von Gravenberg" href="http://d-nb.info/gnd/118633945"/>
-          <area id="z_ed2_243" shape="rect" coords="264,1567,557,1594" alt="Wolfram von Eschenbach" href="http://d-nb.info/gnd/118634933"/>
-          <area id="z_ed2_244" shape="rect" coords="178,1620,493,1655" alt="Walter von der Vogelweide" href="http://d-nb.info/gnd/118628976"/>
-          <area id="z_ed2_245" shape="rect" coords="908,1540,1027,1570" alt="Gudrun" href="http://d-nb.info/gnd/none"/>
-          <area id="z_ed2_246" shape="rect" coords="861,1581,1189,1619" alt="Gottfried von Strassburg" href="http://d-nb.info/gnd/118540947"/>
-          <area id="z_ed2_247" shape="rect" coords="876,1619,1038,1638" alt="Herbort von Fritzlar" href="http://d-nb.info/gnd/118549502"/>
-          <area id="z_ed2_248" shape="rect" coords="886,1646,1092,1663" alt="Albrecht von Halberstadt" href="http://d-nb.info/gnd/118501623"/>
-          <area id="z_ed2_249" shape="rect" coords="207,1678,382,1701" alt="Leuthold von Seven" href="http://d-nb.info/gnd/101244908"/>
-          <area id="z_ed2_250" shape="rect" coords="216,1709,412,1737" alt="Ulrich von Singenberg" href="http://d-nb.info/gnd/118625322"/>
-          <area id="z_ed2_251" shape="rect" coords="158,1747,358,1766" alt="Otto von Botenlauben" href="http://d-nb.info/gnd/118738763"/>
-          <area id="z_ed2_252" shape="rect" coords="216,1780,391,1803" alt="Markgraf von Hohenburg" href="http://d-nb.info/gnd/135684315"/>
-          <area id="z_ed2_253" shape="rect" coords="207,1815,384,1835" alt="Hilbolt von Schwangau" href="http://d-nb.info/gnd/118551205"/>
-          <area id="z_ed2_254" shape="rect" coords="869,1754,1119,1776" alt="Thomasin von Ziklaria" href="http://d-nb.info/gnd/118642774"/>
-          <area id="z_ed2_255" shape="rect" coords="895,1790,1138,1813" alt="Heinrich von dem Türlin" href="http://d-nb.info/gnd/118548352"/>
-          <area id="z_ed2_256" shape="rect" coords="204,1946,438,1974" alt="Neidhart von Reuenthal" href="http://d-nb.info/gnd/118586874"/>
-          <area id="z_ed2_258" shape="rect" coords="315,1992,506,2017" alt="Konrad von Marburg" href="http://d-nb.info/gnd/118713957"/>
-          <area id="z_ed2_259" shape="rect" coords="157,2022,349,2045" alt="Reinmar von Zweter" href="http://d-nb.info/gnd/118599518"/>
-          <area id="z_ed2_260" shape="rect" coords="260,2092,451,2122" alt="David von Augsburg" href="http://d-nb.info/gnd/118679007"/>
-          <area id="z_ed2_261" shape="rect" coords="813,2000,898,2053" alt="Rudolf von Ems" href="http://d-nb.info/gnd/118603736"/>
-          <area id="z_ed2_262" shape="rect" coords="899,1900,1035,1918" alt="Konrad von Fleck" href="http://d-nb.info/gnd/118533797"/>
-          <area id="z_ed2_263" shape="rect" coords="978,2025,1099,2042" alt="der Stricker" href="http://d-nb.info/gnd/118619284"/>
-          <area id="z_ed2_264" shape="rect" coords="979,2132,1214,2151" alt="Wenher der Gartenaere" href="http://d-nb.info/gnd/118631551"/>
-          <area id="z_ed2_266" shape="rect" coords="123,2133,260,2151" alt="Gottfried von Nifen" href="http://d-nb.info/gnd/118696696"/>
-          <area id="z_ed2_267" shape="rect" coords="199,2236,465,2263" alt="Lamprecht von Regensburg" href="http://d-nb.info/gnd/119512653"/>
-          <area id="z_ed2_268" shape="rect" coords="300,2265,448,2284" alt="Heinrich von Krolewicz" href="http://d-nb.info/gnd/none"/>
-          <area id="z_ed2_269" shape="rect" coords="877,2307,1063,2330" alt="Ulrich von Türheim" href="http://d-nb.info/gnd/118625330"/>
-          <area id="z_ed2_270" shape="rect" coords="824,2390,1012,2414" alt="Ulrich von dem Türlin" href="http://d-nb.info/gnd/118625292"/>
-          <area id="z_ed2_273" shape="rect" coords="892,2525,1158,2557" alt="Konrad von Würzburg" href="http://d-nb.info/gnd/118565133"/>
-          <area id="z_ed2_274" shape="rect" coords="230,2416,479,2448" alt="Berthold von Regensburg" href="http://d-nb.info/gnd/11851007X"/>
-          <area id="z_ed2_275" shape="rect" coords="846,2563,1029,2588" alt="Heinrich von Freiberg" href="http://d-nb.info/gnd/118548360"/>
-          <area id="z_ed2_277" shape="rect" coords="313,2669,469,2692" alt="Hugo von Langenstein" href="http://d-nb.info/gnd/118775251"/>
-          <area id="z_ed2_278" shape="rect" coords="791,2769,1046,2795" alt="Ulrich von Eschenbach" href="http://d-nb.info/gnd/11876358X"/>
-          <area id="z_ed2_279" shape="rect" coords="892,2883,1115,2917" alt="Hugo von Trimberg" href="http://d-nb.info/gnd/118554638"/>
-          <area id="z_ed2_280" shape="rect" coords="976,3113,1052,3143" alt="Aesop" href="http://d-nb.info/gnd/118647180"/>
-          <area id="z_ed2_282" shape="rect" coords="844,3008,1058,3028" alt="Heinrich von Neuenstadt" href="http://d-nb.info/gnd/118548433"/>
-          <area id="z_ed2_283" shape="rect" coords="929,3200,1076,3221" alt="Johann von Würzburg" href="http://d-nb.info/gnd/118712349"/>
-          <area id="z_ed2_284" shape="rect" coords="741,3331,932,3360" alt="Ulrich Boner" href="http://d-nb.info/gnd/118661418"/>
-          <area id="z_ed2_286" shape="rect" coords="220,3176,422,3198" alt="Heinrich Frauenlob" href="http://d-nb.info/gnd/118535102"/>
-          <area id="z_ed2_287" shape="rect" coords="922,3385,1102,3408" alt="Jacob von Cessoles" href="http://d-nb.info/gnd/118556398"/>
-          <area id="z_ed2_288" shape="rect" coords="908,3411,1054,3430" alt="Heinrich von Beringen" href="http://d-nb.info/gnd/119127822"/>
-          <area id="z_ed2_289" shape="rect" coords="900,3449,1147,3470" alt="Konrad von Ammenhusen" href="http://d-nb.info/gnd/118713914"/>
-          <area id="z_ed2_290" shape="rect" coords="330,3598,478,3618" alt="Johann Tauler" href="http://d-nb.info/gnd/118621009"/>
-          <area id="z_ed2_291" shape="rect" coords="172,3632,336,3649" alt="Hadamar von Labar" href="http://d-nb.info/gnd/100817602"/>
-          <area id="z_ed2_292" shape="rect" coords="375,3658,517,3678" alt="Heinrich Suso" href="http://d-nb.info/gnd/118613510"/>
-          <area id="z_ed2_293" shape="rect" coords="210,3675,381,3693" alt="Nicolaus von Basel" href="http://d-nb.info/gnd/100955401"/>
-          <area id="z_ed2_294" shape="rect" coords="327,3702,469,3716" alt="Rulmann Merswin" href="http://d-nb.info/gnd/118750356"/>
-          <area id="z_ed2_295" shape="rect" coords="322,3733,536,3757" alt="Heinrich von Nördlingen" href="http://d-nb.info/gnd/118709844"/>
-          <area id="z_ed2_296" shape="rect" coords="244,3918,477,3948" alt="Heinrich der Teichner" href="http://d-nb.info/gnd/118548158"/>
-          <area id="z_ed2_297" shape="rect" coords="266,4205,457,4231" alt="Heinrich von Mügeln" href="http://d-nb.info/gnd/118548417"/>
-          <area id="z_ed2_298" shape="rect" coords="1114,65,1183,82" alt="Thebanus" href="http://d-nb.info/gnd/none"/>
-          <area id="z_ed2_299" shape="rect" coords="1132,93,1192,114" alt="Dictys" href="http://d-nb.info/gnd/none"/>
-          <area id="z_ed2_300" shape="rect" coords="1138,119,1193,139" alt="Dares" href="http://d-nb.info/gnd/none"/>
-          <area id="z_ed2_301" shape="rect" coords="811,111,936,131" alt="Pseudo Kallistenes" href="http://d-nb.info/gnd/118640062"/>
-          <area id="z_ed2_304" shape="rect" coords="863,168,989,185" alt="Archipresbyter Leo" href="http://d-nb.info/gnd/119508796"/>
-          <area id="z_ed2_307" shape="rect" coords="197,692,326,712" alt="Gottfried von Momauth" href="http://d-nb.info/gnd/118716883"/>
-          <area id="z_ed2_308" shape="rect" coords="337,695,371,711" alt="Wace" href="http://d-nb.info/gnd/118805827"/>
-          <area id="z_ed2_310" shape="rect" coords="862,777,1007,799" alt="der Kührenberger" href="http://d-nb.info/gnd/118567756"/>
-          <area id="z_ed2_314" shape="rect" coords="772,793,819,810" alt="Herger" href="http://d-nb.info/gnd/118549588"/>
-          <area id="z_ed2_317" shape="rect" coords="176,790,221,807" alt="Beroux" href="http://d-nb.info/gnd/none"/>
-          <area id="z_ed2_318" shape="rect" coords="164,815,286,834" alt="Thomas von Bretagne" href="http://d-nb.info/gnd/118622129"/>
-          <area id="z_ed2_319" shape="rect" coords="344,824,522,845" alt="Chrêtien de Troyes" href="http://d-nb.info/gnd/118520547"/>
-          <area id="z_ed2_321" shape="rect" coords="867,1013,956,1033" alt="Spervogel" href="http://d-nb.info/gnd/119505231"/>
-          <area id="z_ed2_322" shape="rect" coords="860,1048,954,1066" alt="Glichezaere" href="http://d-nb.info/gnd/118709747"/>
-          <area id="z_ed2_337" shape="rect" coords="995,1311,1181,1329" alt="Konrad von Flussesbrunnen" href="http://d-nb.info/gnd/118565095"/>
-          <area id="z_ed2_346" shape="rect" coords="576,1823,678,1839" alt="Petrus Alfonsus" href="http://d-nb.info/gnd/118740423"/>
-          <area id="z_ed2_347" shape="rect" coords="580,1840,686,1869" alt="Cäsarius von Heisterbach" href="http://d-nb.info/gnd/118518283"/>
-          <area id="z_ed2_350" shape="rect" coords="925,1918,1032,1943" alt="Vridank" href="http://d-nb.info/gnd/118535188"/>
-          <area id="z_ed2_358" shape="rect" coords="1104,1954,1228,1968" alt="Petrus Comestor" href="http://d-nb.info/gnd/118828851"/>
-          <area id="z_ed2_359" shape="rect" coords="1077,1980,1222,1998" alt="Gottfried von Viterbo" href="http://d-nb.info/gnd/11871824X"/>
-          <area id="z_ed2_361" shape="rect" coords="117,2314,209,2334" alt="der Marner" href="http://d-nb.info/gnd/118782010"/>
-          <area id="z_ed2_362" shape="rect" coords="206,2552,280,2569" alt="Steinmar" href="http://d-nb.info/gnd/118967843"/>
-          <area id="z_ed2_366" shape="rect" coords="1011,2714,1133,2733" alt="Seyfried Helbling" href="http://d-nb.info/gnd/101240805"/>
-          <area id="z_ed2_373" shape="rect" coords="340,2895,453,2911" alt="Heinrich Hessler" href="http://d-nb.info/gnd/128691972"/>
-          <area id="z_ed2_375" shape="rect" coords="295,3005,426,3026" alt="Meister Eckart" href="http://d-nb.info/gnd/118528823"/>
-          <area id="z_ed2_376" shape="rect" coords="260,3049,347,3069" alt="Hadlaub" href="http://d-nb.info/gnd/118544349"/>
-          <area id="z_ed2_378" shape="rect" coords="293,3231,460,3253" alt="Barthel Regenbogen" href="http://d-nb.info/gnd/118860429"/>
-          <area id="z_ed2_379" shape="rect" coords="967,3514,1118,3532" alt="Nicolaus Jeroschin" href="http://d-nb.info/gnd/119014998"/>
-          <area id="z_ed2_381" shape="rect" coords="331,4509,493,4533" alt="Hugo von Montfort" href="http://d-nb.info/gnd/118554603"/>
-          <area id="z_ed2_382" shape="rect" coords="278,4543,466,4565" alt="Peter Suchenwirt" href="http://d-nb.info/gnd/118619829"/>
-          <area id="z_ed2_383" shape="rect" coords="332,4580,437,4600" alt="Muscatblüt" href="http://d-nb.info/gnd/118585924"/>
-          <area id="z_ed2_384" shape="rect" coords="853,4523,1009,4542" alt="Ebernand von Cersne" href="http://d-nb.info/gnd/118528521"/>
-          <area id="z_ed2_387" shape="rect" coords="832,4663,964,4679" alt="Hans der Büheler" href="http://d-nb.info/gnd/119011697"/>
-          <area id="z_ed2_388" shape="rect" coords="805,4696,909,4716" alt="Hans Vintler" href="http://d-nb.info/gnd/118804707"/>
-          <area id="z_ed2_390" shape="rect" coords="273,4725,484,4743" alt="Oswald von Wolkenstein" href="http://d-nb.info/gnd/118590618"/>
-          <area id="z_ed2_401" shape="rect" coords="164,5192,352,5219" alt="Hans Rosenplüt" href="http://d-nb.info/gnd/118791176"/>
-          <area id="z_ed2_402" shape="rect" coords="187,5258,377,5283" alt="Michael Beheim" href="http://d-nb.info/gnd/118508342"/>
-          <area id="z_ed2_403" shape="rect" coords="200,5330,313,5353" alt="Hans Folz" href="http://d-nb.info/gnd/118534211"/>
-          <area id="z_ed2_404" shape="rect" coords="885,5159,1141,5185" alt="Gerhard de Groote" href="http://d-nb.info/gnd/118639404"/>
-          <area id="z_ed2_405" shape="rect" coords="873,5244,1068,5258" alt="Hermann von Sachsenheim" href="http://d-nb.info/gnd/118549723"/>
-          <area id="z_ed2_407" shape="rect" coords="160,5401,270,5426" alt="Bocaccio" href="http://d-nb.info/gnd/11851217X"/>
-          <area id="z_ed2_409" shape="rect" coords="982,5469,1115,5491" alt="Rudolf Agricola" href="http://d-nb.info/gnd/118501089"/>
-          <area id="z_ed2_410" shape="rect" coords="713,5499,819,5536" alt="Caspar von der Roen" href="http://d-nb.info/gnd/100964494"/>
-          <area id="z_ed2_411" shape="rect" coords="362,5555,496,5573" alt="Johann von Soest" href="http://d-nb.info/gnd/119269473"/>
-          <area id="z_ed2_412" shape="rect" coords="110,5583,481,5602" alt="Püterich von Reichardshausen" href="http://d-nb.info/gnd/118742892"/>
-          <area id="z_ed2_413" shape="rect" coords="688,5596,870,5618" alt="Clara Hätzlerin" href="http://d-nb.info/gnd/118719831"/>
-          <area id="z_ed2_414" shape="rect" coords="970,5624,1117,5640" alt="Johann Reuchlin" href="http://d-nb.info/gnd/118744658"/>
-          <area id="z_ed2_415" shape="rect" coords="275,5621,465,5635" alt="Heinrich Steinhövel" href="http://d-nb.info/gnd/118617486"/>
-          <area id="z_ed2_416" shape="rect" coords="190,5641,335,5658" alt="Theodor Schernbeck" href="http://d-nb.info/gnd/none"/>
-          <area id="z_ed2_417" shape="rect" coords="211,5662,309,5680" alt="Veit Weber" href="http://d-nb.info/gnd/118806432"/>
-          <area id="z_ed2_418" shape="rect" coords="144,5698,409,5728" alt="Geiler von Kaiserberg" href="http://d-nb.info/gnd/118538209"/>
-          <area id="z_ed2_419" shape="rect" coords="221,5736,344,5755" alt="Albrecht von Eyb" href="http://d-nb.info/gnd/118644378"/>
-          <area id="z_ed2_420" shape="rect" coords="345,5749,456,5766" alt="Nicolaus v. Wyle" href="http://d-nb.info/gnd/118635735"/>
-          <area id="z_ed2_421" shape="rect" coords="652,5705,811,5728" alt="Ulrich Füterer" href="http://d-nb.info/gnd/118694081"/>
-          <area id="z_ed2_422" shape="rect" coords="951,5685,1113,5709" alt="Jacob Wimpheling" href="http://d-nb.info/gnd/118769189"/>
-          <area id="z_ed2_423" shape="rect" coords="209,5791,410,5814" alt="der Pfaff von Kalenberg" href="http://d-nb.info/gnd/129176680"/>
-          <area id="z_ed2_424" shape="rect" coords="114,5889,370,5921" alt="Sebastian Brant" href="http://d-nb.info/gnd/118514474"/>
-          <area id="z_ed2_425" shape="rect" coords="946,5789,1077,5806" alt="Konrad Celtes" href="http://d-nb.info/gnd/118519891"/>
-          <area id="z_ed2_426" shape="rect" coords="930,5843,1104,5859" alt="Desiderius Erasmus" href="http://d-nb.info/gnd/118530666"/>
-      </map>
-
-      <map name="Flaischlen-ed2-p3">
-        <area id="z_ed2_454" shape="rect" coords="994,42,1119,66" alt="Jacob Locher" href="http://d-nb.info/gnd/118780247"/>
-        <area id="z_ed2_455" shape="rect" coords="988,69,1130,99" alt="Heinrich Bebel" href="http://d-nb.info/gnd/118654233"/>
-        <area id="z_ed2_456" shape="rect" coords="990,117,1147,137" alt="Johann Adelphus" href="http://d-nb.info/gnd/118500643"/>
-        <area id="z_ed2_459" shape="rect" coords="727,223,851,244" alt="Johann Pauli" href="http://d-nb.info/gnd/118592114"/>
-        <area id="z_ed2_460" shape="rect" coords="849,282,932,311" alt="Aesop" href="http://d-nb.info/gnd/118647180"/>
-        <area id="z_ed2_462" shape="rect" coords="159,107,378,131" alt="Pamphilus Gengenbach" href="http://d-nb.info/gnd/11853842X"/>
-        <area id="z_ed2_463" shape="rect" coords="120,172,308,199" alt="Thomas Murner" href="http://d-nb.info/gnd/118585886"/>
-        <area id="z_ed2_464" shape="rect" coords="186,144,345,163" alt="Nicolaus Manuel" href="http://d-nb.info/gnd/118577379"/>
-        <area id="z_ed2_470" shape="rect" coords="189,324,375,353" alt="Martin Luther" href="http://d-nb.info/gnd/118575449"/>
-        <area id="z_ed2_471" shape="rect" coords="190,361,351,385" alt="Hans Sachs" href="http://d-nb.info/gnd/118604597"/>
-        <area id="z_ed2_477" shape="rect" coords="943,540,1072,562" alt="Paul Rebhun" href="http://d-nb.info/gnd/118819542"/>
-        <area id="z_ed2_478" shape="rect" coords="923,578,1116,600" alt="Thomas Naogeorgius" href="http://d-nb.info/gnd/118785656"/>
-        <area id="z_ed2_479" shape="rect" coords="686,562,821,585" alt="Jörg Wickram" href="http://d-nb.info/gnd/118632272"/>
-        <area id="z_ed2_480" shape="rect" coords="972,624,1116,647" alt="Johann Agricola" href="http://d-nb.info/gnd/130844136"/>
-        <area id="z_ed2_481" shape="rect" coords="945,650,1094,671" alt="Sebastian Frank" href="http://d-nb.info/gnd/none"/>
-        <area id="z_ed2_482" shape="rect" coords="898,685,1066,704" alt="Erasmus Alberus" href="http://d-nb.info/gnd/118501550"/>
-        <area id="z_ed2_483" shape="rect" coords="863,715,1040,738" alt="Friedrich Dedekind" href="http://d-nb.info/gnd/118671251"/>
-        <area id="z_ed2_484" shape="rect" coords="886,757,1050,779" alt="Jaspar von Gennep" href="http://d-nb.info/gnd/118716824"/>
-        <area id="z_ed2_485" shape="rect" coords="161,683,329,706" alt="Burkart Waldis" href="http://d-nb.info/gnd/118628666"/>
-        <area id="z_ed2_490" shape="rect" coords="872,903,1009,926" alt="Paulus Melissus" href="http://d-nb.info/gnd/118580558"/>
-        <area id="z_ed2_491" shape="rect" coords="592,916,776,944" alt="Adam Puschmann" href="http://d-nb.info/gnd/118803352"/>
-        <area id="z_ed2_492" shape="rect" coords="172,868,277,900" alt="Rabelais" href="http://d-nb.info/gnd/118597450"/>
-        <area id="z_ed2_493" shape="rect" coords="117,1039,333,1066" alt="Johann Fischart" href="http://d-nb.info/gnd/118533185"/>
-        <area id="z_ed2_533" shape="rect" coords="943,1005,1169,1026" alt="Nicodemus Frischlin" href="http://d-nb.info/gnd/118693719"/>
-        <area id="z_ed2_572" shape="rect" coords="526,1315,684,1347" alt="Jacob Ayrer" href="http://d-nb.info/gnd/118651307"/>
-        <area id="z_ed2_574" shape="rect" coords="952,1308,1076,1327" alt="Peter Danasius" href="http://d-nb.info/gnd/none"/>
-        <area id="z_ed2_575" shape="rect" coords="625,1409,814,1432" alt="Georg Rollenhagen" href="http://d-nb.info/gnd/118749544"/>
-        <area id="z_ed2_578" shape="rect" coords="598,1562,839,1587" alt="Wolfhart Spangenberg" href="http://d-nb.info/gnd/119066947"/>
-        <area id="z_ed2_579" shape="rect" coords="170,1675,249,1698" alt="Marot" href="http://d-nb.info/gnd/118731122"/>
-        <area id="z_ed2_580" shape="rect" coords="144,1715,225,1739" alt="Jodelle" href="http://d-nb.info/gnd/121065162"/>
-        <area id="z_ed2_581" shape="rect" coords="135,1755,224,1779" alt="Ronsard" href="http://d-nb.info/gnd/118602519"/>
-        <area id="z_ed2_582" shape="rect" coords="150,1810,252,1832" alt="Malherbe" href="http://d-nb.info/gnd/11873038X"/>
-        <area id="z_ed2_583" shape="rect" coords="258,1836,344,1863" alt="Scudéry" href="http://d-nb.info/gnd/none"/>
-        <area id="z_ed2_584" shape="rect" coords="466,1855,612,1883" alt="J. Lauremberg" href="http://d-nb.info/gnd/118726714"/>
-        <area id="z_ed2_585" shape="rect" coords="911,1725,1072,1745" alt="G.R. Weckherlin" href="http://d-nb.info/gnd/118629840"/>
-        <area id="z_ed2_587" shape="rect" coords="894,1795,1218,1823" alt="Martin Opitz" href="http://d-nb.info/gnd/118590111"/>
-        <area id="z_ed2_588" shape="rect" coords="915,1837,1055,1863" alt="J.W. Zinkgreff" href="http://d-nb.info/gnd/11885870X"/>
-        <area id="z_ed2_589" shape="rect" coords="877,1888,1040,1909" alt="Friedrich Speer" href="http://d-nb.info/gnd/11861598X"/>
-        <area id="z_ed2_590" shape="rect" coords="1035,1905,1229,1934" alt="Friedrich von Logau" href="http://d-nb.info/gnd/11872889X"/>
-        <area id="z_ed2_592" shape="rect" coords="1015,2035,1224,2060" alt="Joost van der Vondel" href="http://d-nb.info/gnd/118627848"/>
-        <area id="z_ed2_593" shape="rect" coords="926,2078,1088,2100" alt="Andreas Tscherning" href="http://d-nb.info/gnd/118802879"/>
-        <area id="z_ed2_594" shape="rect" coords="1097,2111,1219,2130" alt="J.G. Schottelius" href="http://d-nb.info/gnd/118610554"/>
-        <area id="z_ed2_595" shape="rect" coords="1051,2151,1161,2170" alt="Johann Rist" href="http://d-nb.info/gnd/118745425"/>
-        <area id="z_ed2_597" shape="rect" coords="194,2007,285,2029" alt="Guarini" href="http://d-nb.info/gnd/118698753"/>
-        <area id="z_ed2_599" shape="rect" coords="421,2082,503,2100" alt="Simon Dach" href="http://d-nb.info/gnd/11852321X"/>
-        <area id="z_ed2_600" shape="rect" coords="121,2089,275,2113" alt="Paul Flemming" href="http://d-nb.info/gnd/118533908"/>
-        <area id="z_ed2_601" shape="rect" coords="888,2208,1151,2244" alt="Andreas Gryphius" href="http://d-nb.info/gnd/118543032"/>
-        <area id="z_ed2_602" shape="rect" coords="977,2267,1105,2289" alt="A.H. Buchholz" href="http://d-nb.info/gnd/118516744"/>
-        <area id="z_ed2_604" shape="rect" coords="152,2118,300,2133" alt="Paulus Gerhardt" href="http://d-nb.info/gnd/118538659"/>
-        <area id="z_ed2_605" shape="rect" coords="112,2133,265,2149" alt="Joachim Neander" href="http://d-nb.info/gnd/118586688"/>
-        <area id="z_ed2_606" shape="rect" coords="145,2149,287,2170" alt="Georg Neumark" href="http://d-nb.info/gnd/118587404"/>
-        <area id="z_ed2_607" shape="rect" coords="483,2122,637,2143" alt="Philipp vom Zesen" href="http://d-nb.info/gnd/118636596"/>
-        <area id="z_ed2_609" shape="rect" coords="112,2245,368,2272" alt="HJ.Chr. von Grimelshausen" href="http://d-nb.info/gnd/118542273"/>
-        <area id="z_ed2_611" shape="rect" coords="484,2271,613,2292" alt="Montemaior" href="http://d-nb.info/gnd/118736728"/>
-        <area id="z_ed2_613" shape="rect" coords="113,2352,381,2378" alt="Hoffman von Hoffmanswaldau" href="http://d-nb.info/gnd/118706187"/>
-        <area id="z_ed2_614" shape="rect" coords="123,2392,372,2417" alt="Caspar von Lohenstein" href="http://d-nb.info/gnd/118574078"/>
-        <area id="z_ed2_616" shape="rect" coords="583,3057,633,3075" alt="Canitz" href="http://d-nb.info/gnd/none"/>
-        <area id="z_ed2_617" shape="rect" coords="580,3075,638,3091" alt="Besser" href="http://d-nb.info/gnd/none"/>
-        <area id="z_ed2_618" shape="rect" coords="582,3092,630,3110" alt="König" href="http://d-nb.info/gnd/none"/>
-        <area id="z_ed2_619" shape="rect" coords="582,3114,636,3134" alt="Pietsch" href="http://d-nb.info/gnd/118742507"/>
-        <area id="z_ed2_620" shape="rect" coords="213,3098,318,3122" alt="Corneille" href="http://d-nb.info/gnd/118522175"/>
-        <area id="z_ed2_621" shape="rect" coords="222,3138,313,3160" alt="Racine" href="http://d-nb.info/gnd/118597523"/>
-        <area id="z_ed2_622" shape="rect" coords="122,3174,217,3197" alt="Molière" href="http://d-nb.info/gnd/11858331X"/>
-        <area id="z_ed2_623" shape="rect" coords="146,3221,235,3248" alt="Regnard" href="http://d-nb.info/gnd/118788124"/>
-        <area id="z_ed2_624" shape="rect" coords="153,3261,261,3277" alt="Destouches" href="http://d-nb.info/gnd/118671669"/>
-        <area id="z_ed2_625" shape="rect" coords="275,3261,369,3279" alt="Lafontaine" href="http://d-nb.info/gnd/118725947"/>
-        <area id="z_ed2_626" shape="rect" coords="1017,3146,1085,3167" alt="Defoe" href="http://d-nb.info/gnd/118524275"/>
-        <area id="z_ed2_627" shape="rect" coords="980,3193,1222,3215" alt="Johan Christian Günther" href="http://d-nb.info/gnd/11854327X"/>
-        <area id="z_ed2_628" shape="rect" coords="1051,3243,1114,3265" alt="Horaz" href="http://d-nb.info/gnd/118553569"/>
-        <area id="z_ed2_629" shape="rect" coords="987,3256,1051,3279" alt="Homer" href="http://d-nb.info/gnd/11855333X"/>
-        <area id="z_ed2_630" shape="rect" coords="1061,3270,1137,3291" alt="Martial" href="http://d-nb.info/gnd/11857826X"/>
-        <area id="z_ed2_631" shape="rect" coords="1044,3295,1117,3316" alt="Catull" href="http://d-nb.info/gnd/118519719"/>
-        <area id="z_ed2_633" shape="rect" coords="1104,3436,1181,3459" alt="Milton" href="http://d-nb.info/gnd/118582607"/>
-        <area id="z_ed2_636" shape="rect" coords="982,3559,1100,3581" alt="Richardson" href="http://d-nb.info/gnd/118600346"/>
-        <area id="z_ed2_637" shape="rect" coords="842,3557,899,3574" alt="Bodmer" href="http://d-nb.info/gnd/118512315"/>
-        <area id="z_ed2_638" shape="rect" coords="880,3574,949,3590" alt="Breitinger" href="http://d-nb.info/gnd/118514881"/>
-        <area id="z_ed2_639" shape="rect" coords="890,3591,936,3604" alt="Haller" href="http://d-nb.info/gnd/118545140"/>
-        <area id="z_ed2_640" shape="rect" coords="951,3600,1004,3621" alt="Lillo" href="http://d-nb.info/gnd/none"/>
-        <area id="z_ed2_641" shape="rect" coords="1074,3601,1142,3621" alt="Moore" href="http://d-nb.info/gnd/118784714"/>
-        <area id="z_ed2_642" shape="rect" coords="1058,3644,1134,3668" alt="Fielding" href="http://d-nb.info/gnd/118532960"/>
-        <area id="z_ed2_643" shape="rect" coords="875,3775,1013,3799" alt="Aristoteles" href="http://d-nb.info/gnd/118650130"/>
-        <area id="z_ed2_644" shape="rect" coords="136,3522,247,3542" alt="Anakreon" href="http://d-nb.info/gnd/118649035"/>
-        <area id="z_ed2_645" shape="rect" coords="201,3553,271,3575" alt="Horaz" href="http://d-nb.info/gnd/118553569"/>
-        <area id="z_ed2_646" shape="rect" coords="140,3608,233,3630" alt="Petrarca" href="http://d-nb.info/gnd/118593234"/>
-        <area id="z_ed2_647" shape="rect" coords="240,3652,350,3681" alt="Diderot" href="http://d-nb.info/gnd/118525263"/>
-        <area id="z_ed2_648" shape="rect" coords="109,3682,243,3710" alt="Rousseau" href="http://d-nb.info/gnd/118603426"/>
-        <area id="z_ed2_649" shape="rect" coords="831,3819,942,3845" alt="Sophocles" href="http://d-nb.info/gnd/118615688"/>
-        <area id="z_ed2_650" shape="rect" coords="965,3819,1080,3846" alt="Aeschylus" href="http://d-nb.info/gnd/118500856"/>
-        <area id="z_ed2_651" shape="rect" coords="104,3803,202,3828" alt="Voltaire" href="http://d-nb.info/gnd/118627813"/>
-        <area id="z_ed2_652" shape="rect" coords="945,3947,1192,3981" alt="Shakespeare" href="http://d-nb.info/gnd/118613723"/>
-        <area id="z_ed2_653" shape="rect" coords="947,4138,1013,4165" alt="Percy" href="http://d-nb.info/gnd/"/>
-        <area id="z_ed2_654" shape="rect" coords="1113,4156,1179,4181" alt="Swift" href="http://d-nb.info/gnd/118620193"/>
-        <area id="z_ed2_655" shape="rect" coords="1092,4190,1168,4212" alt="Sterne" href="http://d-nb.info/gnd/11861794X"/>
-        <area id="z_ed2_656" shape="rect" coords="1022,4241,1153,4273" alt="Klopstock" href="http://d-nb.info/gnd/118563386"/>
-        <area id="z_ed2_657" shape="rect" coords="1020,4274,1142,4301" alt="Wieland" href="http://d-nb.info/gnd/118632477"/>
-        <area id="z_ed2_658" shape="rect" coords="1021,4301,1125,4328" alt="Bürger" href="http://d-nb.info/gnd/118517104"/>
-        <area id="z_ed2_659" shape="rect" coords="1023,4330,1129,4355" alt="Herder" href="http://d-nb.info/gnd/118549553"/>
-        <area id="z_ed2_660" shape="rect" coords="1024,4354,1131,4382" alt="Goethe" href="http://d-nb.info/gnd/118540238"/>
-        <area id="z_ed2_661" shape="rect" coords="1021,4384,1140,4406" alt="Schiller" href="http://d-nb.info/gnd/118607626"/>
-        <area id="z_ed2_662" shape="rect" coords="905,4166,1066,4197" alt="Macpherson" href="http://d-nb.info/gnd/118781154"/>
-        <area id="z_ed2_663" shape="rect" coords="319,3731,369,3748" alt="Gleim" href="http://d-nb.info/gnd/118717758"/>
-        <area id="z_ed2_664" shape="rect" coords="338,3755,385,3772" alt="Jacobi" href="http://d-nb.info/gnd/118556312"/>
-        <area id="z_ed2_665" shape="rect" coords="388,3755,443,3774" alt="Ramler" href="http://d-nb.info/gnd/119059614"/>
-        <area id="z_ed2_666" shape="rect" coords="362,3732,413,3748" alt="Kleist" href="http://d-nb.info/gnd/118563076"/>
-        <area id="z_ed2_667" shape="rect" coords="172,3942,240,3958" alt="Leisewitz" href="http://d-nb.info/gnd/118571370"/>
-        <area id="z_ed2_668" shape="rect" coords="244,3939,334,3959" alt="Gerstenberg" href="http://d-nb.info/gnd/118690949"/>
-        <area id="z_ed2_669" shape="rect" coords="337,3941,377,3959" alt="Lenz" href="http://d-nb.info/gnd/118571656"/>
-        <area id="z_ed2_670" shape="rect" coords="159,3960,216,3981" alt="Klinger" href="http://d-nb.info/gnd/118563319"/>
-        <area id="z_ed2_671" shape="rect" coords="221,3962,274,3979" alt="Müller" href="http://d-nb.info/gnd/none"/>
-        <area id="z_ed2_672" shape="rect" coords="277,3959,338,3979" alt="Wagner" href="http://d-nb.info/gnd/118594117"/>
-        <area id="z_ed2_673" shape="rect" coords="351,3961,420,3980" alt="Schubart" href="http://d-nb.info/gnd/11710745X"/>
-        <area id="z_ed2_674" shape="rect" coords="255,4002,342,4029" alt="Homer" href="http://d-nb.info/gnd/11855333X"/>
-        <area id="z_ed2_675" shape="rect" coords="225,4037,376,4059" alt="Aristophanes" href="http://d-nb.info/gnd/118503987"/>
-        <area id="z_ed2_676" shape="rect" coords="227,4066,292,4095" alt="Virgil" href="http://d-nb.info/gnd/118626574"/>
-        <area id="z_ed2_677" shape="rect" coords="358,4067,412,4089" alt="Ovid" href="http://d-nb.info/gnd/118590995"/>
-        <area id="z_ed2_678" shape="rect" coords="430,4156,504,4184" alt="Voss" href="http://d-nb.info/gnd/118627910"/>
-        <area id="z_ed2_679" shape="rect" coords="164,4201,250,4223" alt="Goldoni" href="http://d-nb.info/gnd/118540505"/>
-        <area id="z_ed2_680" shape="rect" coords="261,4202,326,4223" alt="Gozzi" href="http://d-nb.info/gnd/118696823"/>
-        <area id="z_ed2_681" shape="rect" coords="159,4229,226,4253" alt="Dante" href="http://d-nb.info/gnd/118523708"/>
-        <area id="z_ed2_682" shape="rect" coords="147,4258,245,4280" alt="Petrarca" href="http://d-nb.info/gnd/118593234"/>
-        <area id="z_ed2_683" shape="rect" coords="266,4278,416,4301" alt="Bocaccio" href="http://d-nb.info/gnd/11851217X"/>
-        <area id="z_ed2_684" shape="rect" coords="140,4338,250,4360" alt="Cervantes" href="http://d-nb.info/gnd/11851993X"/>
-        <area id="z_ed2_685" shape="rect" coords="111,4373,214,4398" alt="Calderon" href="http://d-nb.info/gnd/118518399"/>
-        <area id="z_ed2_686" shape="rect" coords="267,4379,394,4403" alt="Lope de Vega" href="http://d-nb.info/gnd/118626353"/>
-        <area id="z_ed2_687" shape="rect" coords="133,4533,205,4553" alt="Schlegel" href="http://d-nb.info/gnd/none"/>
-        <area id="z_ed2_688" shape="rect" coords="131,4551,180,4572" alt="Tieck" href="http://d-nb.info/gnd/12989432X"/>
-        <area id="z_ed2_689" shape="rect" coords="135,4577,201,4596" alt="Novalis" href="http://d-nb.info/gnd/118588893"/>
-        <area id="z_ed2_690" shape="rect" coords="133,4602,209,4618" alt="Brentano" href="http://d-nb.info/gnd/118515055"/>
-        <area id="z_ed2_691" shape="rect" coords="136,4621,192,4638" alt="Arnim" href="http://d-nb.info/gnd/none"/>
-        <area id="z_ed2_692" shape="rect" coords="134,4643,246,4662" alt="E.T.A. Hoffmann" href="http://d-nb.info/gnd/118552465"/>
-        <area id="z_ed2_693" shape="rect" coords="135,4665,211,4686" alt="H.v.Kleist" href="http://d-nb.info/gnd/118563076"/>
-        <area id="z_ed2_694" shape="rect" coords="134,4692,199,4711" alt="Fouqué" href="http://d-nb.info/gnd/118534556"/>
-        <area id="z_ed2_695" shape="rect" coords="134,4714,215,4732" alt="E Schulze" href="http://d-nb.info/gnd/11899848X"/>
-        <area id="z_ed2_696" shape="rect" coords="133,4736,206,4755" alt="Chamisso" href="http://d-nb.info/gnd/118520040"/>
-        <area id="z_ed2_697" shape="rect" coords="134,4761,216,4776" alt="Eichendorf" href="http://d-nb.info/gnd/118529390"/>
-        <area id="z_ed2_698" shape="rect" coords="133,4777,174,4795" alt="Halm" href="http://d-nb.info/gnd/118720074"/>
-        <area id="z_ed2_699" shape="rect" coords="136,4800,187,4815" alt="Zedlitz" href="http://d-nb.info/gnd/118808346"/>
-        <area id="z_ed2_700" shape="rect" coords="139,4820,175,4835" alt="Grün" href="http://d-nb.info/gnd/118719033"/>
-        <area id="z_ed2_701" shape="rect" coords="134,4838,176,4856" alt="Legnan" href="http://d-nb.info/gnd/none"/>
-        <area id="z_ed2_702" shape="rect" coords="124,4863,250,4886" alt="Eugène Sue" href="http://d-nb.info/gnd/118619861"/>
-        <area id="z_ed2_703" shape="rect" coords="874,4635,1056,4663" alt="Walter Scott" href="http://d-nb.info/gnd/118612409"/>
-        <area id="z_ed2_704" shape="rect" coords="994,4677,1083,4706" alt="Bulwer" href="http://d-nb.info/gnd/11866493X"/>
-        <area id="z_ed2_705" shape="rect" coords="1110,4655,1158,4672" alt="Arndt" href="http://d-nb.info/gnd/118504118"/>
-        <area id="z_ed2_706" shape="rect" coords="1109,4675,1168,4691" alt="Körner" href="http://d-nb.info/gnd/118713507"/>
-        <area id="z_ed2_707" shape="rect" coords="1110,4697,1220,4711" alt="Schenkendorf" href="http://d-nb.info/gnd/118754599"/>
-        <area id="z_ed2_708" shape="rect" coords="940,4772,1142,4803" alt="Lord Byron" href="http://d-nb.info/gnd/118518208"/>
-        <area id="z_ed2_709" shape="rect" coords="305,4776,368,4793" alt="Werner" href="http://d-nb.info/gnd/none"/>
-        <area id="z_ed2_710" shape="rect" coords="305,4796,370,4809" alt="Müllner" href="http://d-nb.info/gnd/118737775"/>
-        <area id="z_ed2_711" shape="rect" coords="308,4812,389,4830" alt="Grillparzer" href="http://d-nb.info/gnd/118542192"/>
-        <area id="z_ed2_712" shape="rect" coords="1108,4881,1166,4902" alt="Uhland" href="http://d-nb.info/gnd/118625063"/>
-        <area id="z_ed2_713" shape="rect" coords="1111,4904,1163,4924" alt="Schwab" href="http://d-nb.info/gnd/118762745"/>
-        <area id="z_ed2_714" shape="rect" coords="1108,4925,1161,4939" alt="Kerner" href="http://d-nb.info/gnd/118561545"/>
-        <area id="z_ed2_715" shape="rect" coords="1108,4940,1165,4955" alt="Mörike" href="http://d-nb.info/gnd/118583107"/>
-        <area id="z_ed2_716" shape="rect" coords="951,5023,1004,5041" alt="Heine" href="http://d-nb.info/gnd/118548018"/>
-        <area id="z_ed2_717" shape="rect" coords="1028,5022,1078,5038" alt="Börne" href="http://d-nb.info/gnd/118512749"/>
-        <area id="z_ed2_718" shape="rect" coords="1101,5022,1179,5042" alt="Wienbarg" href="http://d-nb.info/gnd/118807226"/>
-        <area id="z_ed2_719" shape="rect" coords="952,5042,1008,5064" alt="Mundt" href="http://d-nb.info/gnd/118735225"/>
-        <area id="z_ed2_720" shape="rect" coords="1028,5043,1094,5061" alt="Gutzkow" href="http://d-nb.info/gnd/118543830"/>
-        <area id="z_ed2_721" shape="rect" coords="1103,5044,1151,5061" alt="Laube" href="http://d-nb.info/gnd/118570080"/>
-        <area id="z_ed2_722" shape="rect" coords="965,5092,1034,5115" alt="Platen" href="http://d-nb.info/gnd/118594869"/>
-        <area id="z_ed2_723" shape="rect" coords="820,5152,906,5172" alt="Dickens" href="http://d-nb.info/gnd/118525239"/>
-        <area id="z_ed2_725" shape="rect" coords="1008,5149,1118,5176" alt="Thackeray" href="http://d-nb.info/gnd/118621483"/>
-        <area id="z_ed2_728" shape="rect" coords="170,4930,270,4961" alt="Scribe" href="http://d-nb.info/gnd/118612425"/>
-        <area id="z_ed2_729" shape="rect" coords="119,5106,218,5125" alt="Fallersleben" href="http://d-nb.info/gnd/118552589"/>
-        <area id="z_ed2_730" shape="rect" coords="124,5125,215,5143" alt="Dingelstedt" href="http://d-nb.info/gnd/118525751"/>
-        <area id="z_ed2_731" shape="rect" coords="122,5144,162,5159" alt="Prutz" href="http://d-nb.info/gnd/11859687X"/>
-        <area id="z_ed2_732" shape="rect" coords="127,5163,188,5178" alt="Herwegh" href="http://d-nb.info/gnd/118550128"/>
-        <area id="z_ed2_733" shape="rect" coords="126,5181,206,5203" alt="Freiligrath" href="http://d-nb.info/gnd/118535196"/>
-        <area id="z_ed2_734" shape="rect" coords="438,5077,502,5096" alt="Rückert" href="http://d-nb.info/gnd/118603817"/>
-        <area id="z_ed2_735" shape="rect" coords="402,5162,485,5183" alt="Freiligrath" href="http://d-nb.info/gnd/118535196"/>
-        <area id="z_ed2_736" shape="rect" coords="396,5184,488,5202" alt="Bodenstedt" href="http://d-nb.info/gnd/118512293"/>
-        <area id="z_ed2_737" shape="rect" coords="805,5455,906,5476" alt="Puschkin" href="http://d-nb.info/gnd/118641816"/>
-        <area id="z_ed2_738" shape="rect" coords="953,5477,1055,5502" alt="Turgeniew" href="http://d-nb.info/gnd/118643010"/>
-        <area id="z_ed2_739" shape="rect" coords="1098,5624,1192,5652" alt="Björnson" href="http://d-nb.info/gnd/118511459"/>
-        <area id="z_ed2_740" shape="rect" coords="1124,5654,1202,5673" alt="Kielland" href="http://d-nb.info/gnd/118561960"/>
-        <area id="z_ed2_741" shape="rect" coords="1063,5673,1146,5695" alt="Ibsen" href="http://d-nb.info/gnd/118555286"/>
-        <area id="z_ed2_742" shape="rect" coords="188,5212,283,5244" alt="Augier" href="http://d-nb.info/gnd/119493020"/>
-        <area id="z_ed2_743" shape="rect" coords="226,5264,332,5291" alt="Sardou" href="http://d-nb.info/gnd/118794566"/>
-        <area id="z_ed2_744" shape="rect" coords="211,5526,283,5557" alt="Zola" href="http://d-nb.info/gnd/118637223"/>
-        <area id="z_ed2_745" shape="rect" coords="257,5605,332,5629" alt="Ohnet" href="http://d-nb.info/gnd/117112372"/>
-        <area id="z_ed2_746" shape="rect" coords="380,2563,612,2588" alt="Assmann von Abschatz" href="http://d-nb.info/gnd/118500279"/>
-        <area id="z_ed2_747" shape="rect" coords="371,2591,694,2617" alt="Anton Ulrich von Braunschweig" href="http://d-nb.info/gnd/118503472"/>
-        <area id="z_ed2_748" shape="rect" coords="380,2615,670,2641" alt="H.A. von Ziegler-Klipphausen" href="http://d-nb.info/gnd/118772902"/>
-        <area id="z_ed2_749" shape="rect" coords="136,2669,271,2694" alt="Ph. J. Spener" href="http://d-nb.info/gnd/118616099"/>
-        <area id="z_ed2_751" shape="rect" coords="989,2623,1173,2648" alt="Christian Weise" href="http://d-nb.info/gnd/118630369"/>
-        <area id="z_ed2_752" shape="rect" coords="985,2667,1116,2694" alt="Georg Morhof" href="http://d-nb.info/gnd/118784919"/>
-        <area id="z_ed2_753" shape="rect" coords="969,2698,1149,2721" alt="Christian Wernicke" href="http://d-nb.info/gnd/118631586"/>
-        <area id="z_ed2_754" shape="rect" coords="997,2881,1205,2901" alt="Erdmann Neumeister" href="http://d-nb.info/gnd/11893094X"/>
-        <area id="z_ed2_755" shape="rect" coords="997,2910,1189,2934" alt="Benjamin Neukirch" href="http://d-nb.info/gnd/118785990"/>
-        <area id="z_ed2_756" shape="rect" coords="214,2039,296,2060" alt="Marini" href="http://d-nb.info/gnd/none"/>
-        <area id="z_ed2_757" shape="rect" coords="147,4985,296,5018" alt="Dumas père" href="http://d-nb.info/gnd/118528068"/>
-        <area id="z_ed2_758" shape="rect" coords="189,5040,275,5067" alt="Ponsard" href="http://d-nb.info/gnd/118595695"/>
-        <area id="z_ed2_828" shape="rect" coords="505,2084,614,2100" alt="Robert Roberthin" href="http://d-nb.info/gnd/"/>
-        <area id="z_ed2_829" shape="rect" coords="617,2085,689,2100" alt="Heinrich Albert" href="http://d-nb.info/gnd/"/>
-        <area id="z_ed2_830" shape="rect" coords="428,2330,545,2360" alt="de Quevedo" href="http://d-nb.info/gnd/"/>
-        <area id="z_ed2_831" shape="rect" coords="388,2258,422,2268" alt="J. Clai" href="http://d-nb.info/gnd/"/>
-        <area id="z_ed2_832" shape="rect" coords="428,2256,506,2268" alt="Ph. Harsdörffer" href="http://d-nb.info/gnd/"/>
-        <area id="z_ed2_833" shape="rect" coords="512,2257,571,2270" alt="S. v. Birken" href="http://d-nb.info/gnd/"/>
-        <area id="z_ed2_838" shape="rect" coords="421,3504,452,3583" alt="Gottsched = Kreis" href="http://d-nb.info/gnd/"/>
-        <area id="z_ed2_841" shape="rect" coords="1103,3712,1132,3777" alt="Lessing = Kreis" href="http://d-nb.info/gnd/"/>
-
-      </map>
-
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-      <script src="js/bootstrap.min.js"></script><script src="js/ie10-viewport-bug-workaround.js"></script>
-      <script src="js/jquery.rwdImageMaps.min.js"></script>
-	  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.js"></script>
-
-
-
-      <script>
+      
+           <div class="row"><img class="img-responsive" src="1829_481A.jpg" usemap="#tidens-stroem" style="width:100%;"></div>
+           <map name="tidens-stroem">
+                <area id="imtArea_0" shape="rect" coords="1751,304,4740,648" alt="" href="#imtArea_0">
+            <area id="imtArea_13" shape="rect" coords="745,1617,1259,1694" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_1" shape="rect" coords="1772,672,2437,754" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_3" shape="rect" coords="1783,755,1929,807" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_4" shape="rect" coords="1935,757,2099,808" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_5" shape="rect" coords="2101,756,2235,801" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_6" shape="rect" coords="1906,1507,2028,1578" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_7" shape="rect" coords="1859,1588,2042,1637" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_9" shape="rect" coords="1904,1853,2065,1902" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea__11" shape="rect" coords="1917,1904,2075,1944" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_10" shape="rect" coords="1926,2293,2221,2356" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_11" shape="rect" coords="2234,757,2424,863" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_12" shape="rect" coords="2096,1919,2204,2005" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea__15" shape="rect" coords="1876,2515,2139,2572" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_14" shape="rect" coords="2308,1370,2438,1460" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_15" shape="rect" coords="2306,1466,2418,1504" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_16" shape="rect" coords="2200,1548,2286,1704" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_17" shape="rect" coords="758,1700,826,1760" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_18" shape="rect" coords="758,1916,822,1984" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_19" shape="rect" coords="754,2148,826,2216" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_20" shape="rect" coords="744,2374,800,2434" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_21" shape="rect" coords="758,2596,822,2654" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_22" shape="rect" coords="726,2818,796,2876" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_23" shape="rect" coords="740,3036,1036,3098" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_24" shape="rect" coords="730,3260,794,3324" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_25" shape="rect" coords="734,3474,806,3544" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_26" shape="rect" coords="728,3702,792,3768" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_27" shape="rect" coords="724,3932,792,3996" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_28" shape="rect" coords="718,4140,774,4204" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_29" shape="rect" coords="708,4374,766,4436" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_30" shape="rect" coords="698,4594,758,4662" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_31" shape="rect" coords="690,4824,752,4882" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_32" shape="rect" coords="686,5048,746,5112" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_33" shape="rect" coords="680,5276,760,5346" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_34" shape="rect" coords="676,5508,758,5572" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_35" shape="rect" coords="674,5734,756,5804" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_36" shape="rect" coords="668,5964,752,6022" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_37" shape="rect" coords="668,6180,756,6252" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_38" shape="rect" coords="664,6396,754,6468" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_39" shape="rect" coords="662,6624,740,6682" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_40" shape="rect" coords="662,6844,732,6906" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_41" shape="rect" coords="654,7070,736,7130" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_42" shape="rect" coords="5362,1608,5838,1666" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_43" shape="rect" coords="5786,1680,5854,1746" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_44" shape="rect" coords="5800,1900,5854,1970" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_45" shape="rect" coords="5794,2124,5856,2188" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_46" shape="rect" coords="5800,2352,5860,2416" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_47" shape="rect" coords="5792,2570,5860,2634" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_48" shape="rect" coords="5796,2794,5852,2860" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_49" shape="rect" coords="5560,3022,5852,3092" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_50" shape="rect" coords="5794,3248,5848,3310" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_51" shape="rect" coords="5786,3700,5844,3764" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_52" shape="rect" coords="5784,3932,5840,3988" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_53" shape="rect" coords="5778,4144,5832,4210" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_54" shape="rect" coords="5768,4362,5824,4428" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_55" shape="rect" coords="5772,4590,5832,4662" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_56" shape="rect" coords="5766,4812,5820,4874" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_57" shape="rect" coords="5762,5030,5818,5102" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_58" shape="rect" coords="5728,5262,5810,5324" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_59" shape="rect" coords="5736,5492,5808,5554" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_60" shape="rect" coords="5722,5706,5808,5774" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_61" shape="rect" coords="5728,5932,5800,5996" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_62" shape="rect" coords="5722,6158,5794,6226" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_63" shape="rect" coords="5730,6382,5796,6442" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_64" shape="rect" coords="5714,6604,5792,6664" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_65" shape="rect" coords="5714,6820,5792,6892" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_66" shape="rect" coords="5700,7046,5786,7112" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_67" shape="rect" coords="2146,2510,2404,2552" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_68" shape="rect" coords="1866,2602,2174,2644" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_69" shape="rect" coords="2220,2600,2374,2652" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_70" shape="rect" coords="1874,2654,2250,2722" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_71" shape="rect" coords="2034,2726,2346,2762" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_72" shape="rect" coords="1994,2764,2428,2804" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_73" shape="rect" coords="2722,2806,2904,2882" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_74" shape="rect" coords="2122,2850,2342,2986" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_75" shape="rect" coords="2926,2848,3084,2886" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_76" shape="rect" coords="2518,2888,3158,2932" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_78" shape="rect" coords="3366,2934,3542,2980" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_79" shape="rect" coords="2856,2982,3328,3020" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_77" shape="rect" coords="3008,2942,3354,2978" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_80" shape="rect" coords="3332,2980,3546,3020" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_81" shape="rect" coords="2850,3030,3324,3088" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_82" shape="rect" coords="3350,3026,3926,3074" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_83" shape="rect" coords="4042,3016,4212,3068" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_84" shape="rect" coords="2380,3068,2584,3286" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_85" shape="rect" coords="3580,3098,3760,3142" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_86" shape="rect" coords="3830,3134,4434,3224" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_87" shape="rect" coords="3520,3152,3812,3310" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_88" shape="rect" coords="3314,3250,3516,3298" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_90" shape="rect" coords="3842,3248,4042,3324" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_91" shape="rect" coords="3458,3372,3838,3418" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_92" shape="rect" coords="3928,3430,4172,3482" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_93" shape="rect" coords="3330,3470,3888,3538" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea__95" shape="rect" coords="3708,3596,3900,3646" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_94" shape="rect" coords="4028,3604,4244,3666" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_95" shape="rect" coords="3656,3668,3982,3720" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_96" shape="rect" coords="3550,3752,4500,3808" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_97" shape="rect" coords="4574,3748,4932,3800" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_98" shape="rect" coords="3668,3816,3840,3858" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_99" shape="rect" coords="3994,3812,4238,3856" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_100" shape="rect" coords="3098,3874,3556,3921" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_101" shape="rect" coords="3686,3873,4380,3921" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_103" shape="rect" coords="3144,3923,3475,3966" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_104" shape="rect" coords="3688,3926,3942,3978" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_105" shape="rect" coords="4046,3928,4360,3968" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_107" shape="rect" coords="2768,3963,2842,4204" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_108" shape="rect" coords="2849,4068,3092,4122" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_112" shape="rect" coords="2786,4822,3088,4870" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_110" shape="rect" coords="2802,5046,3066,5092" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_111" shape="rect" coords="2810,5122,3056,5184" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea__114" shape="rect" coords="2834,5197,3060,5242" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_113" shape="rect" coords="2808,5346,3078,5388" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_114" shape="rect" coords="2804,5408,3084,5446" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_115" shape="rect" coords="2814,5452,3056,5504" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_116" shape="rect" coords="2774,5598,3082,5678" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_117" shape="rect" coords="2778,5680,3060,5724" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_118" shape="rect" coords="2768,5760,3066,5792" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_119" shape="rect" coords="2774,5796,3058,5836" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_120" shape="rect" coords="2758,5850,3086,5886" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_121" shape="rect" coords="2742,5894,3114,5948" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_122" shape="rect" coords="2730,6000,3048,6044" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_124" shape="rect" coords="2798,6068,3010,6116" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_125" shape="rect" coords="2738,6214,2942,6254" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_126" shape="rect" coords="2727,6255,2955,6294" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_127" shape="rect" coords="2708,6302,2964,6340" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_128" shape="rect" coords="2737,6388,2954,6425" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_129" shape="rect" coords="2781,6434,2944,6478" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_130" shape="rect" coords="2953,6440,3093,6473" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_131" shape="rect" coords="2769,6491,3021,6530" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_132" shape="rect" coords="2607,6558,2909,6600" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_133" shape="rect" coords="2603,6675,2928,6715" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_134" shape="rect" coords="2574,6716,2948,6743" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_135" shape="rect" coords="2597,6747,2919,6779" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_136" shape="rect" coords="2642,6795,2862,6833" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_137" shape="rect" coords="2656,6836,2853,6865" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_138" shape="rect" coords="2684,6887,2873,6924" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_139" shape="rect" coords="2554,6924,2935,6956" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_140" shape="rect" coords="2636,6957,2906,6993" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_141" shape="rect" coords="2533,7000,2968,7031" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_142" shape="rect" coords="2550,7032,2946,7107" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_143" shape="rect" coords="2514,7179,2647,7256" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_144" shape="rect" coords="2654,7189,2777,7239" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_145" shape="rect" coords="2783,7196,2878,7237" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_146" shape="rect" coords="2879,7187,2986,7249" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_147" shape="rect" coords="2224,1709,2296,1905" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_148" shape="rect" coords="2379,2599,2463,2659" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_149" shape="rect" coords="2375,1678,2432,2376" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_150" shape="rect" coords="2659,676,3114,739" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_151" shape="rect" coords="2642,752,3103,798" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_152" shape="rect" coords="2785,903,2955,944" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_153" shape="rect" coords="2681,982,3021,1038" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_154" shape="rect" coords="2650,1057,3026,1102" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_155" shape="rect" coords="2763,1137,2941,1186" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_156" shape="rect" coords="2646,1212,2999,1268" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_157" shape="rect" coords="2598,1294,3034,1347" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_158" shape="rect" coords="2635,1366,2994,1423" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_159" shape="rect" coords="2759,1451,2925,1491" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_160" shape="rect" coords="2499,1503,2700,1539" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_162" shape="rect" coords="2505,1542,2672,1577" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea__164" shape="rect" coords="2534,2213,2671,2270" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_163" shape="rect" coords="2531,2308,2748,2337" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_164" shape="rect" coords="2535,2366,2828,2406" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_165" shape="rect" coords="2550,2544,2785,2604" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_166" shape="rect" coords="2552,2698,2757,2738" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_167" shape="rect" coords="2704,1516,2989,1573" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_168" shape="rect" coords="2666,1730,3021,1767" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_169" shape="rect" coords="2679,1784,2811,1834" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_170" shape="rect" coords="2674,1900,3015,1952" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_171" shape="rect" coords="2634,1953,2838,2018" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_172" shape="rect" coords="2875,1961,3079,1996" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_173" shape="rect" coords="2846,2003,3106,2043" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_174" shape="rect" coords="2647,2021,2841,2084" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_175" shape="rect" coords="2909,2048,3090,2081" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_176" shape="rect" coords="2666,2087,3096,2126" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_177" shape="rect" coords="2630,2135,3116,2170" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_178" shape="rect" coords="2675,2173,3087,2238" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_179" shape="rect" coords="2715,2247,3103,2307" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_180" shape="rect" coords="2832,2397,3131,2444" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_181" shape="rect" coords="2818,2624,3110,2675" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_182" shape="rect" coords="2891,2711,3035,2760" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_183" shape="rect" coords="3594,2314,4325,2351" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_184" shape="rect" coords="3652,2353,3943,2380" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_185" shape="rect" coords="4030,2353,4353,2388" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_192" shape="rect" coords="4080,2395,4346,2512" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_193" shape="rect" coords="4048,2961,4317,3010" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_187" shape="rect" coords="3235,2383,3999,2439" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_188" shape="rect" coords="3200,2747,3411,2799" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_189" shape="rect" coords="3328,2844,3558,2894" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_190" shape="rect" coords="3564,2924,3750,2965" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_191" shape="rect" coords="3801,2968,3980,3010" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_186" shape="rect" coords="4374,2348,4645,2387" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_194" shape="rect" coords="4389,2393,4618,2506" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_195" shape="rect" coords="4386,2560,4662,2604" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_196" shape="rect" coords="4378,2723,4684,2768" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_197" shape="rect" coords="4409,2867,4641,2927" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_198" shape="rect" coords="3210,672,3622,734" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_199" shape="rect" coords="3198,750,3638,810" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_200" shape="rect" coords="3170,1266,3362,1308" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_201" shape="rect" coords="3148,1309,3376,1373" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_202" shape="rect" coords="3171,1383,3323,1422" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_203" shape="rect" coords="3163,1683,3311,1720" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_204" shape="rect" coords="3387,1383,3524,1620" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_205" shape="rect" coords="3378,1773,3544,1814" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_206" shape="rect" coords="3597,1512,3675,1591" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_207" shape="rect" coords="3744,688,3932,784" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_208" shape="rect" coords="3767,786,3918,872" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_209" shape="rect" coords="3716,1499,3899,1541" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_210" shape="rect" coords="3712,1581,3901,1615" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_211" shape="rect" coords="3861,1625,4057,1656" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_212" shape="rect" coords="3702,1641,3844,1672" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_213" shape="rect" coords="3867,1658,4104,1686" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_214" shape="rect" coords="3866,1690,4102,1719" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_215" shape="rect" coords="3962,1730,4106,1760" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_216" shape="rect" coords="4114,1722,4255,1767" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_217" shape="rect" coords="3609,1739,3796,1778" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_218" shape="rect" coords="4057,684,4224,725" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_219" shape="rect" coords="4050,744,4227,781" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_220" shape="rect" coords="4045,786,4216,815" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_221" shape="rect" coords="4237,1417,4355,1452" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_222" shape="rect" coords="4257,677,4411,728" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_223" shape="rect" coords="4253,752,4420,792" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_224" shape="rect" coords="4278,818,4386,854" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_225" shape="rect" coords="4283,874,4408,910" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_226" shape="rect" coords="4310,928,4442,965" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_227" shape="rect" coords="4301,1198,4414,1230" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_228" shape="rect" coords="4285,1255,4407,1293" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_229" shape="rect" coords="4119,1297,4307,1397" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_230" shape="rect" coords="4020,1400,4207,1487" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_231" shape="rect" coords="3952,1487,4101,1520" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_232" shape="rect" coords="3946,1575,4083,1609" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_233" shape="rect" coords="4109,1620,4247,1685" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_234" shape="rect" coords="4111,1687,4257,1715" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_235" shape="rect" coords="4654,1845,4817,1877" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_236" shape="rect" coords="4693,2038,4851,2076" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_238" shape="rect" coords="4613,2289,4757,2323" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea__240" shape="rect" coords="4629,2686,4866,2720" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_239" shape="rect" coords="4797,2733,4928,2979" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_240" shape="rect" coords="4787,3023,4944,3058" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_241" shape="rect" coords="4769,3094,4940,3136" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_242" shape="rect" coords="4755,3189,4924,3239" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_243" shape="rect" coords="4522,682,4691,732" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_244" shape="rect" coords="4523,738,4668,779" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_245" shape="rect" coords="4445,936,4565,993" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_246" shape="rect" coords="4348,1003,4490,1048" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_247" shape="rect" coords="4319,1071,4494,1123" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_248" shape="rect" coords="4321,1156,4527,1192" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_249" shape="rect" coords="4420,1203,4560,1255" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_250" shape="rect" coords="4419,1300,4611,1337" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_251" shape="rect" coords="4495,1643,4666,1716" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_252" shape="rect" coords="4481,1771,4657,1814" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_253" shape="rect" coords="4461,1859,4652,1898" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_254" shape="rect" coords="4625,2439,4818,2476" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_255" shape="rect" coords="4630,2484,4854,2520" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_256" shape="rect" coords="5152,3065,5358,3102" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_257" shape="rect" coords="5303,3472,5468,3509" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_258" shape="rect" coords="5274,3520,5480,3562" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_259" shape="rect" coords="5356,3616,5606,4304" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_260" shape="rect" coords="5420,4414,5583,4462" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_261" shape="rect" coords="5238,4106,5350,4274" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_262" shape="rect" coords="5216,4408,5418,4446" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_263" shape="rect" coords="4966,4449,5284,4492" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_264" shape="rect" coords="5294,4468,5452,4503" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_265" shape="rect" coords="5246,4523,5539,4763" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_266" shape="rect" coords="5567,4465,5638,4620" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_267" shape="rect" coords="4975,4624,5232,4671" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_268" shape="rect" coords="5586,4734,5645,4884" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_269" shape="rect" coords="5213,4825,5576,4867" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_270" shape="rect" coords="5002,4883,5204,4926" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_271" shape="rect" coords="5281,4887,5546,4929" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_272" shape="rect" coords="5563,4891,5632,5131" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_273" shape="rect" coords="5239,4962,5556,5005" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_274" shape="rect" coords="5386,5083,5542,5199" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_275" shape="rect" coords="5202,5216,5406,5275" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_276" shape="rect" coords="5229,5315,5373,5495" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_277" shape="rect" coords="5206,5695,5417,5742" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_278" shape="rect" coords="5517,5461,5606,5744" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_279" shape="rect" coords="5625,5615,5666,5800" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_280" shape="rect" coords="5405,5801,5635,5845" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_281" shape="rect" coords="5045,5845,5253,5880" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_282" shape="rect" coords="5262,5862,5505,5921" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_284" shape="rect" coords="4929,5915,5114,5956" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_285" shape="rect" coords="4886,5971,5066,6016" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_286" shape="rect" coords="4686,6007,4883,6034" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_287" shape="rect" coords="4700,6089,4861,6124" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_288" shape="rect" coords="4868,6086,5037,6124" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_289" shape="rect" coords="4693,6155,4877,6190" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_290" shape="rect" coords="4886,6158,5037,6207" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_291" shape="rect" coords="4840,6223,5025,6258" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_292" shape="rect" coords="4825,6268,5033,6308" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_293" shape="rect" coords="4648,6314,4970,6351" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_294" shape="rect" coords="4490,6364,4569,6488" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_295" shape="rect" coords="4662,6445,4906,6488" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_296" shape="rect" coords="4626,6521,4953,6566" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_297" shape="rect" coords="4481,6491,4594,6607" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_298" shape="rect" coords="4643,7113,4942,7154" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_299" shape="rect" coords="4587,7157,4986,7238" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea__301" shape="rect" coords="5287,5922,5535,5969" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_300" shape="rect" coords="5312,6090,5555,6134" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_301" shape="rect" coords="5295,6203,5610,6273" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_302" shape="rect" coords="5213,6363,5415,6412" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_303" shape="rect" coords="4933,6436,5247,6492" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_304" shape="rect" coords="5207,6508,5364,6712" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_305" shape="rect" coords="5143,6735,5368,6791" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_306" shape="rect" coords="5133,6857,5372,6926" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_307" shape="rect" coords="5127,7083,5362,7241" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_308" shape="rect" coords="4942,5452,5123,5487" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_309" shape="rect" coords="4941,5492,5111,5525" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_310" shape="rect" coords="5023,5636,5174,5734" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_311" shape="rect" coords="5441,6383,5655,6430" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_312" shape="rect" coords="5413,6899,5596,6951" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_313" shape="rect" coords="5404,6969,5602,7012" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_314" shape="rect" coords="5396,7104,5598,7147" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_315" shape="rect" coords="5413,7187,5598,7239" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea__317" shape="rect" coords="3054,5983,3135,6015" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_316" shape="rect" coords="3058,6027,3156,6093" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_317" shape="rect" coords="3141,7054,3241,7088" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_318" shape="rect" coords="3145,7192,3247,7240" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_319" shape="rect" coords="2955,6138,3069,6199" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_320" shape="rect" coords="2959,6207,3078,6276" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_321" shape="rect" coords="2956,6344,3083,6424" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_322" shape="rect" coords="2977,6543,3127,6584" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_323" shape="rect" coords="3061,6586,3160,6637" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_324" shape="rect" coords="3069,6679,3155,6737" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_325" shape="rect" coords="2992,7120,3152,7156" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_326" shape="rect" coords="2991,7190,3146,7240" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_327" shape="rect" coords="2979,6599,3055,6629" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_328" shape="rect" coords="2976,6867,3082,6947" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_329" shape="rect" coords="3148,4065,3402,4129" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_330" shape="rect" coords="3180,4136,3371,4207" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_331" shape="rect" coords="3219,4212,3334,4345" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_332" shape="rect" coords="3191,4356,3374,4408" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_333" shape="rect" coords="3208,4440,3351,4621" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_334" shape="rect" coords="3180,4660,3366,4699" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_336" shape="rect" coords="3100,4841,3442,4887" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea__338" shape="rect" coords="3223,4925,3446,4969" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_337" shape="rect" coords="3191,4977,3455,5015" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_338" shape="rect" coords="3224,5016,3390,5172" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_339" shape="rect" coords="3227,5217,3423,5310" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_340" shape="rect" coords="3245,5319,3357,5356" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_341" shape="rect" coords="3205,5658,3383,5695" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_342" shape="rect" coords="3187,5709,3384,5764" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_343" shape="rect" coords="3154,5847,3386,5900" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_344" shape="rect" coords="3170,5943,3370,6012" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_345" shape="rect" coords="3181,6025,3395,6076" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_346" shape="rect" coords="3218,6122,3391,6158" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_347" shape="rect" coords="3247,6175,3411,6215" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_348" shape="rect" coords="3265,6244,3422,6284" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_349" shape="rect" coords="3253,6315,3450,6373" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_350" shape="rect" coords="3261,6409,3464,6464" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_351" shape="rect" coords="3279,6481,3465,6522" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_352" shape="rect" coords="3279,6568,3487,6639" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_353" shape="rect" coords="3291,6678,3485,6735" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_354" shape="rect" coords="3293,6774,3491,6823" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_355" shape="rect" coords="3291,6827,3500,6864" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_356" shape="rect" coords="3318,6935,3478,6970" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_357" shape="rect" coords="3291,7000,3477,7038" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_358" shape="rect" coords="3302,7047,3484,7084" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_359" shape="rect" coords="3265,7090,3487,7123" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_360" shape="rect" coords="3303,7136,3459,7173" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_361" shape="rect" coords="3271,7189,3487,7259" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_362" shape="rect" coords="3561,4060,3866,4141" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_363" shape="rect" coords="3524,4143,3843,4181" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_364" shape="rect" coords="3565,4197,3802,4235" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_365" shape="rect" coords="3538,4241,3765,4280" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_366" shape="rect" coords="3500,4333,3653,4378" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_367" shape="rect" coords="3504,4375,3646,4406" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_368" shape="rect" coords="3378,4158,3496,4409" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_369" shape="rect" coords="3481,4755,3719,4792" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_370" shape="rect" coords="3466,4796,3708,4830" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_371" shape="rect" coords="3499,5184,3740,5220" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_372" shape="rect" coords="3498,5224,3578,5346" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_373" shape="rect" coords="3586,5460,3747,5504" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_374" shape="rect" coords="3551,5712,3845,5797" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_375" shape="rect" coords="3537,5806,3650,5884" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_376" shape="rect" coords="3658,5849,3771,5924" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_377" shape="rect" coords="3535,5944,3751,5974" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_378" shape="rect" coords="3561,6141,3694,6200" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_379" shape="rect" coords="3575,6272,3716,6335" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_380" shape="rect" coords="3593,6428,3722,6464" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_381" shape="rect" coords="3606,6475,3722,6510" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_382" shape="rect" coords="3607,6589,3746,6634" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_383" shape="rect" coords="3655,5982,3786,6049" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_384" shape="rect" coords="3673,6075,3795,6106" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_385" shape="rect" coords="3710,6351,3847,6415" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_386" shape="rect" coords="3746,6881,3916,6977" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_387" shape="rect" coords="3503,7150,3761,7243" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_388" shape="rect" coords="3764,7191,3911,7240" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_389" shape="rect" coords="3629,4286,3857,4325" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_390" shape="rect" coords="3684,4371,3844,4442" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_391" shape="rect" coords="3911,5148,3995,5363" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_392" shape="rect" coords="3753,5367,3908,5466" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_394" shape="rect" coords="3916,7192,4068,7248" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_395" shape="rect" coords="4022,4069,4316,4140" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_396" shape="rect" coords="4099,4142,4310,4184" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_397" shape="rect" coords="3950,4484,4031,4692" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_398" shape="rect" coords="4035,4636,4161,4673" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_399" shape="rect" coords="4165,4622,4318,4660" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_400" shape="rect" coords="4229,4672,4322,4734" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_401" shape="rect" coords="4011,4718,4224,4754" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_402" shape="rect" coords="4112,5260,4296,5305" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_403" shape="rect" coords="4101,5328,4203,5414" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_404" shape="rect" coords="4207,5327,4320,5410" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_405" shape="rect" coords="4193,5467,4349,5507" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_406" shape="rect" coords="4185,5811,4283,5872" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_407" shape="rect" coords="4116,5875,4274,5929" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_408" shape="rect" coords="4115,6327,4295,6363" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_409" shape="rect" coords="4126,6365,4282,6392" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_410" shape="rect" coords="4301,5507,4416,5560" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_411" shape="rect" coords="4292,5755,4422,5802" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_412" shape="rect" coords="4297,6152,4396,6194" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_413" shape="rect" coords="4293,6222,4403,6294" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_414" shape="rect" coords="4299,6340,4429,6380" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_415" shape="rect" coords="4297,6395,4437,6435" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_416" shape="rect" coords="4328,6503,4480,6569" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_417" shape="rect" coords="3935,6432,4207,6471" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_418" shape="rect" coords="3918,6471,4251,6515" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_419" shape="rect" coords="3953,6521,4178,6581" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_420" shape="rect" coords="4062,6603,4326,6675" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_421" shape="rect" coords="4067,6700,4311,6751" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_422" shape="rect" coords="4007,6756,4243,6795" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_423" shape="rect" coords="4047,6810,4204,6850" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_424" shape="rect" coords="4146,6884,4335,6968" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_425" shape="rect" coords="4149,7024,4301,7069" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_426" shape="rect" coords="4118,7112,4315,7156" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_427" shape="rect" coords="4139,7194,4323,7246" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_428" shape="rect" coords="4351,6720,4492,6806" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_429" shape="rect" coords="4337,6936,4493,7068" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_430" shape="rect" coords="4337,7118,4493,7156" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_431" shape="rect" coords="4331,7190,4489,7248" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea__433" shape="rect" coords="4605,3862,4949,3915" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea__434" shape="rect" coords="4643,3916,4903,3956" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_432" shape="rect" coords="4500,4078,4713,4251" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_433" shape="rect" coords="4635,4262,4958,4312" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_434" shape="rect" coords="4623,4315,4961,4384" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_435" shape="rect" coords="4633,4676,4974,4721" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_436" shape="rect" coords="4707,4795,4894,4843" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_437" shape="rect" coords="4618,5140,4923,5237" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_438" shape="rect" coords="4619,5411,4854,5452" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_439" shape="rect" coords="4555,5469,4836,5510" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_440" shape="rect" coords="4482,5515,4578,5653" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_441" shape="rect" coords="4607,5755,4752,5791" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_442" shape="rect" coords="4452,5843,4585,6152" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_443" shape="rect" coords="4575,6276,4752,6309" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_444" shape="rect" coords="3766,1805,3996,1841" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_445" shape="rect" coords="3738,1864,4042,1909" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_446" shape="rect" coords="3696,1917,4097,1980" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_447" shape="rect" coords="3793,1994,3997,2036" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_448" shape="rect" coords="3674,2259,4202,2302" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_449" shape="rect" coords="1255,2642,1386,2739" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_450" shape="rect" coords="902,3970,1075,4009" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_451" shape="rect" coords="862,4827,1019,4870" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_452" shape="rect" coords="837,5012,1008,5049" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_453" shape="rect" coords="830,5119,1049,5160" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_454" shape="rect" coords="881,5242,1071,5283" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_455" shape="rect" coords="888,5320,1108,5360" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_456" shape="rect" coords="894,5396,1088,5434" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_457" shape="rect" coords="825,5901,1011,5930" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_458" shape="rect" coords="824,5936,1006,5969" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_459" shape="rect" coords="826,5972,1037,6005" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_460" shape="rect" coords="838,6101,1052,6228" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_461" shape="rect" coords="838,6372,1021,6412" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_462" shape="rect" coords="837,6553,1041,6595" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_463" shape="rect" coords="1421,2643,1605,2735" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_464" shape="rect" coords="1414,2755,1547,2798" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_465" shape="rect" coords="1355,3047,1529,3092" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_466" shape="rect" coords="1240,3188,1472,3433" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_467" shape="rect" coords="1228,3605,1416,3669" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_468" shape="rect" coords="1137,3838,1321,3891" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_469" shape="rect" coords="1095,3968,1300,4025" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_470" shape="rect" coords="1074,4051,1276,4104" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_471" shape="rect" coords="1037,4356,1213,4396" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_472" shape="rect" coords="1066,4565,1180,4606" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_473" shape="rect" coords="1024,4629,1224,4662" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_474" shape="rect" coords="1049,4834,1209,4893" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_475" shape="rect" coords="1054,4990,1221,5032" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_476" shape="rect" coords="1078,5120,1270,5162" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_477" shape="rect" coords="1136,5268,1300,5309" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_478" shape="rect" coords="1119,5423,1284,5523" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_479" shape="rect" coords="1080,5550,1244,5625" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_480" shape="rect" coords="1054,5638,1211,5676" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_481" shape="rect" coords="1028,5727,1204,5812" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_482" shape="rect" coords="1044,5863,1222,5906" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_483" shape="rect" coords="1046,5927,1226,5966" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_484" shape="rect" coords="1059,6003,1244,6071" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_485" shape="rect" coords="1058,6082,1244,6121" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_486" shape="rect" coords="1083,6123,1243,6189" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_487" shape="rect" coords="1071,6191,1246,6228" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_488" shape="rect" coords="1062,6252,1231,6291" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_489" shape="rect" coords="1068,6309,1223,6368" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_490" shape="rect" coords="1051,6375,1225,6413" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_491" shape="rect" coords="1051,6467,1255,6598" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_492" shape="rect" coords="1040,6601,1249,6641" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_493" shape="rect" coords="877,6671,1176,6756" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_494" shape="rect" coords="812,6774,1239,6874" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_495" shape="rect" coords="805,6891,1203,7011" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_496" shape="rect" coords="813,7033,1211,7195" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_497" shape="rect" coords="808,7200,1215,7265" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_498" shape="rect" coords="1632,2736,1775,2840" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_499" shape="rect" coords="1638,2868,1748,2913" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_500" shape="rect" coords="1613,2948,1758,2995" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_501" shape="rect" coords="1581,3019,1751,3063" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_502" shape="rect" coords="1571,3071,1748,3102" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_503" shape="rect" coords="1569,3108,1719,3149" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_504" shape="rect" coords="1541,3236,1686,3280" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_505" shape="rect" coords="1513,3313,1670,3356" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_506" shape="rect" coords="1507,3381,1632,3428" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_507" shape="rect" coords="1482,3526,1656,3578" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_508" shape="rect" coords="1469,3611,1633,3653" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_509" shape="rect" coords="1383,3812,1592,3868" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_510" shape="rect" coords="1398,3884,1547,3952" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_511" shape="rect" coords="1317,4099,1502,4152" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_512" shape="rect" coords="1318,4175,1432,4216" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_513" shape="rect" coords="1269,4356,1407,4409" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_514" shape="rect" coords="1249,4430,1425,4512" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_515" shape="rect" coords="1222,4568,1426,4608" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_516" shape="rect" coords="1242,4678,1446,4735" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_517" shape="rect" coords="1243,4777,1449,4829" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_518" shape="rect" coords="1246,4871,1451,4914" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_519" shape="rect" coords="1259,4914,1435,4967" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_520" shape="rect" coords="1291,4971,1460,5009" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_521" shape="rect" coords="1322,5103,1463,5144" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_522" shape="rect" coords="1311,5171,1498,5210" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_523" shape="rect" coords="1322,5274,1522,5324" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_524" shape="rect" coords="1170,5364,1625,5402" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_525" shape="rect" coords="1289,5460,1497,5505" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_526" shape="rect" coords="1261,5551,1455,5601" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_527" shape="rect" coords="1234,5644,1433,5679" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_528" shape="rect" coords="1219,5691,1423,5725" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_529" shape="rect" coords="1215,5730,1406,5762" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_530" shape="rect" coords="1213,5782,1404,5818" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_531" shape="rect" coords="1225,5863,1426,5914" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_532" shape="rect" coords="1246,5941,1433,5978" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_533" shape="rect" coords="1259,6000,1453,6038" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_534" shape="rect" coords="1259,6052,1464,6085" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_535" shape="rect" coords="1271,6090,1457,6158" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_536" shape="rect" coords="1476,6104,1652,6141" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_537" shape="rect" coords="1687,6117,1869,6156" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_538" shape="rect" coords="1349,6168,1824,6204" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_539" shape="rect" coords="1415,6216,1712,6255" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_540" shape="rect" coords="1305,6262,1824,6305" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_541" shape="rect" coords="1286,6322,1862,6367" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_542" shape="rect" coords="1403,6370,1710,6406" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_543" shape="rect" coords="1701,6413,1855,6447" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_544" shape="rect" coords="1330,6451,1588,6488" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_545" shape="rect" coords="1282,6487,1593,6521" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_546" shape="rect" coords="1322,6522,1585,6550" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_547" shape="rect" coords="1292,6553,1586,6575" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_548" shape="rect" coords="1325,6576,1578,6605" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_549" shape="rect" coords="1267,6607,1618,6658" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_550" shape="rect" coords="1317,6671,1604,6710" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_551" shape="rect" coords="1269,6712,1612,6750" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_552" shape="rect" coords="1300,6752,1578,6792" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_553" shape="rect" coords="1323,6796,1581,6833" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_554" shape="rect" coords="1367,6838,1512,6885" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_555" shape="rect" coords="1291,6891,1587,6934" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_556" shape="rect" coords="1289,6947,1583,7038" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_557" shape="rect" coords="1286,7040,1590,7075" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_558" shape="rect" coords="1246,7078,1617,7114" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_559" shape="rect" coords="1249,7121,1473,7161" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_560" shape="rect" coords="1244,7164,1484,7198" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_561" shape="rect" coords="1247,7199,1478,7241" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_562" shape="rect" coords="1796,2810,1892,2928" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_563" shape="rect" coords="1758,3066,1882,3120" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_564" shape="rect" coords="1742,3154,1862,3234" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_565" shape="rect" coords="1676,3608,1754,3664" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_566" shape="rect" coords="1532,4036,1658,4073" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_567" shape="rect" coords="1532,4076,1637,4120" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_568" shape="rect" coords="1450,4505,1536,4572" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_569" shape="rect" coords="1456,4827,1579,4906" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_570" shape="rect" coords="1476,4924,1656,4996" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_571" shape="rect" coords="1593,4511,1662,4581" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_572" shape="rect" coords="1585,4606,1667,4672" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_573" shape="rect" coords="1492,5001,1617,5062" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_574" shape="rect" coords="1511,5091,1628,5156" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_575" shape="rect" coords="1519,5192,1647,5225" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_576" shape="rect" coords="1543,5277,1679,5357" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_579" shape="rect" coords="1656,5423,1749,5479" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_577" shape="rect" coords="1519,5440,1644,5499" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_578" shape="rect" coords="1286,5509,1467,5548" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_580" shape="rect" coords="1471,5505,1638,5573" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_581" shape="rect" coords="1627,5574,1706,5665" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_582" shape="rect" coords="1451,5625,1612,5670" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_583" shape="rect" coords="1436,5717,1588,5751" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_584" shape="rect" coords="1423,5785,1588,5819" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_585" shape="rect" coords="1597,5787,1680,5857" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_586" shape="rect" coords="1582,5867,1683,5931" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_587" shape="rect" coords="1435,5893,1579,5965" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_588" shape="rect" coords="1468,5999,1645,6039" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_589" shape="rect" coords="1935,2918,2048,3001" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_590" shape="rect" coords="1919,3004,2055,3073" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_592" shape="rect" coords="1898,3091,2057,3138" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_593" shape="rect" coords="1894,3301,2046,3343" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_594" shape="rect" coords="1894,3590,2026,3653" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_595" shape="rect" coords="1870,3736,2015,3790" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_596" shape="rect" coords="1839,3918,1919,3964" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_597" shape="rect" coords="1775,4058,1903,4099" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_598" shape="rect" coords="1673,4439,1886,4498" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_599" shape="rect" coords="1675,4507,1876,4544" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_600" shape="rect" coords="1697,4731,1870,4817" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_601" shape="rect" coords="1712,4959,1893,4998" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_602" shape="rect" coords="1765,5145,1924,5182" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_603" shape="rect" coords="1766,5223,1933,5268" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_604" shape="rect" coords="1781,5275,1939,5310" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_605" shape="rect" coords="1776,5408,1929,5452" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_606" shape="rect" coords="1733,5591,1902,5626" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_607" shape="rect" coords="1710,5639,1907,5695" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_608" shape="rect" coords="1700,5820,1871,5854" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_609" shape="rect" coords="1698,5860,1885,5905" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_610" shape="rect" coords="1686,5914,1887,5956" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_611" shape="rect" coords="1672,6030,1880,6083" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_612" shape="rect" coords="1646,6453,1875,6491" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_613" shape="rect" coords="1659,6500,1844,6536" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_614" shape="rect" coords="1674,6590,1847,6636" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_615" shape="rect" coords="1646,6670,1861,6711" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_616" shape="rect" coords="1639,6722,1844,6755" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_617" shape="rect" coords="1630,6771,1833,6810" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_618" shape="rect" coords="1652,6895,1823,6932" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_619" shape="rect" coords="1659,6949,1804,6987" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_620" shape="rect" coords="1646,7036,1827,7077" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_621" shape="rect" coords="1639,7077,1839,7122" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_622" shape="rect" coords="1540,7135,1829,7170" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_623" shape="rect" coords="1582,7169,1745,7198" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_624" shape="rect" coords="1487,7200,1846,7260" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_625" shape="rect" coords="1987,4719,2729,4823" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_626" shape="rect" coords="1982,4825,2175,4958" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_627" shape="rect" coords="1991,5019,2137,5057" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_628" shape="rect" coords="2003,5243,2178,5309" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_629" shape="rect" coords="2018,5359,2183,5398" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_630" shape="rect" coords="2014,5505,2162,5542" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_631" shape="rect" coords="1959,5778,2140,5815" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_632" shape="rect" coords="1920,5860,2099,6295" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_633" shape="rect" coords="1930,6328,2110,6405" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_634" shape="rect" coords="1927,6527,2106,6613" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_635" shape="rect" coords="1906,6702,2098,6738" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_636" shape="rect" coords="1913,6832,2078,6868" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_637" shape="rect" coords="1917,6893,2111,6936" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_638" shape="rect" coords="1955,7108,2257,7146" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_639" shape="rect" coords="1978,7150,2208,7185" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_640" shape="rect" coords="1909,7191,2289,7241" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_641" shape="rect" coords="2185,4825,2332,4859" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_642" shape="rect" coords="2190,4960,2320,4999" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_643" shape="rect" coords="2203,5240,2346,5307" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_644" shape="rect" coords="2128,6160,2278,6246" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_645" shape="rect" coords="2116,6555,2300,6606" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_646" shape="rect" coords="2113,6792,2301,6828" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_647" shape="rect" coords="2118,6847,2297,6894" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_648" shape="rect" coords="2125,7046,2260,7086" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_649" shape="rect" coords="2350,4825,2521,4948" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_650" shape="rect" coords="2324,5777,2496,5862" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_651" shape="rect" coords="2360,6284,2533,6321" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_652" shape="rect" coords="2301,6205,2360,6540" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_653" shape="rect" coords="2364,6436,2526,6476" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_654" shape="rect" coords="2309,6653,2529,6698" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_655" shape="rect" coords="2286,6729,2507,6763" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_656" shape="rect" coords="2328,6768,2503,6811" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_657" shape="rect" coords="2302,6845,2511,6934" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_658" shape="rect" coords="2301,6970,2496,7005" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_659" shape="rect" coords="2307,7033,2459,7096" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_660" shape="rect" coords="2310,7122,2499,7165" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_661" shape="rect" coords="2311,7192,2499,7240" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_662" shape="rect" coords="2556,4870,2708,4920" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_663" shape="rect" coords="2585,5043,2724,5089" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_664" shape="rect" coords="2548,5277,2732,5325" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_665" shape="rect" coords="2547,5476,2716,5514" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_666" shape="rect" coords="2569,5704,2708,5737" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_667" shape="rect" coords="2573,5818,2730,5849" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_668" shape="rect" coords="2584,5852,2711,5886" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_669" shape="rect" coords="2572,5946,2728,5980" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_670" shape="rect" coords="2553,6071,2721,6127" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_671" shape="rect" coords="2572,6169,2729,6217" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_672" shape="rect" coords="2555,6270,2713,6301" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_673" shape="rect" coords="2565,6328,2703,6393" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_674" shape="rect" coords="2571,6393,2686,6417" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_675" shape="rect" coords="1074,7290,5419,7470" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_677" shape="rect" coords="2949,7495,3635,7662" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea__679" shape="rect" coords="4573,7489,5410,7542" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_678" shape="rect" coords="3689,1671,3843,1709" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea_679" shape="rect" coords="4104,1489,4239,1521" alt="" href="http://d-nb.info/gnd/11864310X">
+            <area id="imtArea__680" shape="rect" coords="5770,3456,5866,3536" alt="" href="http://d-nb.info/gnd/11864310X"></map>
+      
+        
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script><script src="js/ie10-viewport-bug-workaround.js"></script>
+        <script src="js/jquery.rwdImageMaps.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.js"></script>
+        
+        
+        
+        <script>
                 $(document).ready(function(e) {
                 $('img[usemap]').rwdImageMaps();
                 });
@@ -1210,8 +734,8 @@
                 });
                 });
             </script>
-            <!-- hier das Scrollscript -->
-            <script>
+        <!-- hier das Scrollscript -->
+        <script>
             $(document).ready(function(){
 
 				// hide .navbar first
@@ -1231,11 +755,11 @@
 
 			});
 </script>
-
-
-<!-- Autocomplete -->
-<!-- http://johnstonianera.com/jquery-autocomplete-xml/ -->
-<script>
+        
+        
+        <!-- Autocomplete -->
+        <!-- http://johnstonianera.com/jquery-autocomplete-xml/ -->
+        <script>
  $(document).ready(function() {
  var myArr = [];
 
@@ -1271,5 +795,5 @@
  }
 });
 </script>
-    </body>
+   </body>
 </html>
